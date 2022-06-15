@@ -1,8 +1,9 @@
 import { request, gql } from 'graphql-request';
 
-import { BlogPostProps } from '../../index';
+import { PostsMain, SlugContext, PostSlugs } from '../../index';
+import { getAllSlugs, getPost } from '../../lib/api';
 
-export default function BlogPost({ data }: BlogPostProps) {
+export default function BlogPost({ data }: PostsMain) {
   const post = data[0];
 
   const myPortableTextComponents = {
@@ -27,41 +28,8 @@ export default function BlogPost({ data }: BlogPostProps) {
   );
 }
 
-type Context = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function getStaticProps(context: Context) {
-  const getPost = gql`
-  query {
-    allPost(where: { slug: { current: { eq: "${context.params.slug}" } } }) {        
-      title
-      keywords
-      author {
-        name
-        role
-        image {
-          asset {
-            url
-          }
-        }
-      }
-      featuredImage {
-        asset {
-          url
-        }
-      }
-      featuredImageAlt
-      category
-      publishedAt
-      body
-    }
-  }
-  `;
-
-  const { allPost } = await request(process.env.CMS_URL as string, getPost);
+export async function getStaticProps(context: SlugContext) {
+  const { allPost } = await request(process.env.CMS_URL as string, getPost(context.params.slug));
 
   return {
     props: {
@@ -70,26 +38,8 @@ export async function getStaticProps(context: Context) {
   };
 }
 
-type BlogPostSlugs = {
-  allPost: {
-    slug: {
-      current: string;
-    };
-  }[];
-};
-
 export async function getStaticPaths() {
-  const getAllSlugs = gql`
-    query {
-      allPost(sort: { publishedAt: DESC }) {
-        slug {
-          current
-        }
-      }
-    }
-  `;
-
-  const { allPost }: BlogPostSlugs = await request(process.env.CMS_URL as string, getAllSlugs);
+  const { allPost }: PostSlugs = await request(process.env.CMS_URL as string, getAllSlugs);
 
   const paths = allPost.map(item => ({
     params: { slug: item.slug.current },

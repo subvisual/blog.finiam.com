@@ -1,10 +1,10 @@
 import { request, gql } from 'graphql-request';
 import Link from 'next/link';
 
-import { BlogIndexProps } from '../index';
+import { PostsPreview } from '../index';
 import { getAllPosts } from '../lib/api';
 
-export default function BlogIndex({ data: allPost }: BlogIndexProps) {
+export default function BlogIndex({ data: allPost }: PostsPreview) {
   return allPost.map(item => (
     <div key={item.slug.current}>
       <img src={item.featuredImage.asset.url} alt={item.featuredImageAlt}></img>

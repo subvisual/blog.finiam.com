@@ -57,3 +57,48 @@ export const getPostsByCategory = (category: string) => gql`
       }
     }
   `;
+
+export const getAllCategories = gql`
+  query {
+    allPost(sort: { publishedAt: DESC }) {
+      category
+    }
+  }
+`;
+
+export const getAllSlugs = gql`
+  query {
+    allPost(sort: { publishedAt: DESC }) {
+      slug {
+        current
+      }
+    }
+  }
+`;
+
+export const getPost = (slug: string) => gql`
+query {
+  allPost(where: { slug: { current: { eq: "${slug}" } } }) {        
+    title
+    keywords
+    author {
+      name
+      role
+      image {
+        asset {
+          url
+        }
+      }
+    }
+    featuredImage {
+      asset {
+        url
+      }
+    }
+    featuredImageAlt
+    category
+    publishedAt
+    body
+  }
+}
+`;

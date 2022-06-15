@@ -1,10 +1,10 @@
 import { request, gql } from 'graphql-request';
 import Link from 'next/link';
 
-import { CategoryProps } from '../../index';
-import { getPostsByCategory } from '../../lib/api';
+import { PostsPreview, PostCategories, CategoryContext } from '../../index';
+import { getPostsByCategory, getAllCategories } from '../../lib/api';
 
-export default function Category({ data: allPost }: CategoryProps) {
+export default function Category({ data: allPost }: PostsPreview) {
   return allPost.map(item => (
     <div key={item.slug.current}>
       <img src={item.featuredImage.asset.url} alt={item.featuredImageAlt}></img>
@@ -24,13 +24,7 @@ export default function Category({ data: allPost }: CategoryProps) {
   ));
 }
 
-type Context = {
-  params: {
-    category: string;
-  };
-};
-
-export async function getStaticProps(context: Context) {
+export async function getStaticProps(context: CategoryContext) {
   const { allPost } = await request(
     process.env.CMS_URL as string,
     getPostsByCategory(context.params.category)
@@ -43,24 +37,10 @@ export async function getStaticProps(context: Context) {
   };
 }
 
-type BlogPostCategories = {
-  allPost: {
-    category: string;
-  }[];
-};
-
 export async function getStaticPaths() {
-  const getCategories = gql`
-    query {
-      allPost(sort: { publishedAt: DESC }) {
-        category
-      }
-    }
-  `;
-
-  const { allPost }: BlogPostCategories = await request(
+  const { allPost }: PostCategories = await request(
     process.env.CMS_URL as string,
-    getCategories
+    getAllCategories
   );
 
   const categories = Array.from(new Set(allPost.map(item => item.category)));

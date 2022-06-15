@@ -1,4 +1,4 @@
-export type BlogPostPreview = {
+export type PostPreview = {
   title: string;
   slug: {
     current: string;
@@ -23,11 +23,11 @@ export type BlogPostPreview = {
   publishedAt: string;
 };
 
-export type BlogIndexProps = {
+export type PostsPreview = {
   data: BlogPostPreview[];
 };
 
-export type BlogPostMain = {
+export type PostMain = {
   title: string;
   keywords: string;
   author: {
@@ -50,10 +50,32 @@ export type BlogPostMain = {
   body: string;
 };
 
-export type BlogPostProps = {
+export type PostsMain = {
   data: BlogPostMain[];
 };
 
-export type CategoryProps = {
-  data: BlogPostPreview[];
+export type PostCategories = {
+  allPost: {
+    category: string;
+  }[];
+};
+
+export type SlugContext = {
+  params: {
+    slug: string;
+  };
+};
+
+export type CategoryContext = {
+  params: {
+    category: string;
+  };
+};
+
+export type PostSlugs = {
+  allPost: {
+    slug: {
+      current: string;
+    };
+  }[];
 };
