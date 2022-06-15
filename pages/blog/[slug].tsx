@@ -1,31 +1,6 @@
 import { request, gql } from 'graphql-request';
 
-type BlogPostMain = {
-  title: string;
-  keywords: string;
-  author: {
-    name: string;
-    role: string;
-    image: {
-      asset: {
-        url: string;
-      };
-    };
-  };
-  featuredImage: {
-    asset: {
-      url: string;
-    };
-  };
-  featuredImageAlt: string;
-  category: string;
-  publishedAt: string;
-  body: string;
-};
-
-type BlogPostProps = {
-  data: BlogPostMain[];
-};
+import { BlogPostProps } from '../../index';
 
 export default function BlogPost({ data }: BlogPostProps) {
   const post = data[0];

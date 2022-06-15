@@ -1,34 +1,8 @@
 import { request, gql } from 'graphql-request';
 import Link from 'next/link';
 
-export type BlogPostPreview = {
-  title: string;
-  slug: {
-    current: string;
-  };
-  keywords: string;
-  longDescription: string;
-  author: {
-    name: string;
-    image: {
-      asset: {
-        url: string;
-      };
-    };
-  };
-  featuredImage: {
-    asset: {
-      url: string;
-    };
-  };
-  featuredImageAlt: string;
-  category: string;
-  publishedAt: string;
-};
-
-type BlogIndexProps = {
-  data: BlogPostPreview[];
-};
+import { BlogIndexProps } from '../index';
+import { getAllPosts } from '../lib/api';
 
 export default function BlogIndex({ data: allPost }: BlogIndexProps) {
   return allPost.map(item => (
@@ -51,35 +25,6 @@ export default function BlogIndex({ data: allPost }: BlogIndexProps) {
 }
 
 export async function getStaticProps() {
-  const getAllPosts = gql`
-    query {
-      allPost(sort: { publishedAt: DESC }) {
-        title
-        slug {
-          current
-        }
-        keywords
-        longDescription
-        author {
-          name
-          image {
-            asset {
-              url
-            }
-          }
-        }
-        featuredImage {
-          asset {
-            url
-          }
-        }
-        featuredImageAlt
-        category
-        publishedAt
-      }
-    }
-  `;
-
   const { allPost } = await request(process.env.CMS_URL as string, getAllPosts);
 
   return {

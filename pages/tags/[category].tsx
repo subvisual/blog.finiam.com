@@ -1,11 +1,8 @@
 import { request, gql } from 'graphql-request';
 import Link from 'next/link';
 
-import { BlogPostPreview } from '../index';
-
-type CategoryProps = {
-  data: BlogPostPreview[];
-};
+import { CategoryProps } from '../../index';
+import { getPostsByCategory } from '../../lib/api';
 
 export default function Category({ data: allPost }: CategoryProps) {
   return allPost.map(item => (
@@ -34,36 +31,10 @@ type Context = {
 };
 
 export async function getStaticProps(context: Context) {
-  const getPost = gql`
-    query {
-      allPost(where: { category: { eq: "${context.params.category}"} }) {        
-        title
-        slug {
-          current
-        }
-        keywords
-        longDescription
-        author {
-          name
-          image {
-            asset {
-              url
-            }
-          }
-        }
-        featuredImage {
-          asset {
-            url
-          }
-        }
-        featuredImageAlt
-        category
-        publishedAt
-      }
-    }
-  `;
-
-  const { allPost } = await request(process.env.CMS_URL as string, getPost);
+  const { allPost } = await request(
+    process.env.CMS_URL as string,
+    getPostsByCategory(context.params.category)
+  );
 
   return {
     props: {
