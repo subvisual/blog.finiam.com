@@ -6,10 +6,6 @@ import { getAllSlugs, getPost } from '../../lib/api';
 export default function BlogPost({ data }: PostsMain) {
   const post = data[0];
 
-  const myPortableTextComponents = {
-    types: {},
-  };
-
   return (
     <div>
       <h1>{post.title}</h1>
