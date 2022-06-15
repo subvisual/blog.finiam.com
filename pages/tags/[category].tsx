@@ -1,36 +1,13 @@
 import { request, gql } from 'graphql-request';
 import Link from 'next/link';
 
-export type BlogPostPreview = {
-  title: string;
-  slug: {
-    current: string;
-  };
-  keywords: string;
-  longDescription: string;
-  author: {
-    name: string;
-    image: {
-      asset: {
-        url: string;
-      };
-    };
-  };
-  featuredImage: {
-    asset: {
-      url: string;
-    };
-  };
-  featuredImageAlt: string;
-  category: string;
-  publishedAt: string;
-};
+import { BlogPostPreview } from '../index';
 
-type BlogIndexProps = {
+type CategoryProps = {
   data: BlogPostPreview[];
 };
 
-export default function BlogIndex({ data: allPost }: BlogIndexProps) {
+export default function Category({ data: allPost }: CategoryProps) {
   return allPost.map(item => (
     <div key={item.slug.current}>
       <img src={item.featuredImage.asset.url} alt={item.featuredImageAlt}></img>
@@ -50,10 +27,16 @@ export default function BlogIndex({ data: allPost }: BlogIndexProps) {
   ));
 }
 
-export async function getStaticProps() {
-  const getAllPosts = gql`
+type Context = {
+  params: {
+    category: string;
+  };
+};
+
+export async function getStaticProps(context: Context) {
+  const getPost = gql`
     query {
-      allPost(sort: { publishedAt: DESC }) {
+      allPost(where: { category: { eq: "${context.params.category}"} }) {        
         title
         slug {
           current
@@ -80,11 +63,43 @@ export async function getStaticProps() {
     }
   `;
 
-  const { allPost } = await request(process.env.CMS_URL as string, getAllPosts);
+  const { allPost } = await request(process.env.CMS_URL as string, getPost);
 
   return {
     props: {
       data: allPost,
     },
+  };
+}
+
+type BlogPostCategories = {
+  allPost: {
+    category: string;
+  }[];
+};
+
+export async function getStaticPaths() {
+  const getCategories = gql`
+    query {
+      allPost(sort: { publishedAt: DESC }) {
+        category
+      }
+    }
+  `;
+
+  const { allPost }: BlogPostCategories = await request(
+    process.env.CMS_URL as string,
+    getCategories
+  );
+
+  const categories = Array.from(new Set(allPost.map(item => item.category)));
+
+  const paths = categories.map(category => ({
+    params: { category },
+  }));
+
+  return {
+    paths,
+    fallback: true, // false or 'blocking'
   };
 }
