@@ -1,7 +1,6 @@
 import { request, gql } from 'graphql-request';
 import Link from 'next/link';
 
-import { PostsPreview, PostCategories, CategoryContext } from '../../index';
 import { getPostsByCategory, getAllCategories } from '../../lib/api';
 
 export default function Category({ data: allPost }: PostsPreview) {
@@ -25,10 +24,7 @@ export default function Category({ data: allPost }: PostsPreview) {
 }
 
 export async function getStaticProps(context: CategoryContext) {
-  const { allPost } = await request(
-    process.env.CMS_URL as string,
-    getPostsByCategory(context.params.category)
-  );
+  const { allPost } = await getPostsByCategory(context.params.category);
 
   return {
     props: {
@@ -38,10 +34,7 @@ export async function getStaticProps(context: CategoryContext) {
 }
 
 export async function getStaticPaths() {
-  const { allPost }: PostCategories = await request(
-    process.env.CMS_URL as string,
-    getAllCategories
-  );
+  const { allPost }: PostCategories = await getAllCategories();
 
   const categories = Array.from(new Set(allPost.map(item => item.category)));
 
@@ -51,6 +44,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true, // false or 'blocking'
+    fallback: false,
   };
 }

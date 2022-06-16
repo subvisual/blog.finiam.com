@@ -1,7 +1,6 @@
 import { request, gql } from 'graphql-request';
 import Link from 'next/link';
 
-import { PostsPreview } from '../index';
 import { getAllPosts } from '../lib/api';
 
 export default function BlogIndex({ data: allPost }: PostsPreview) {
@@ -25,7 +24,7 @@ export default function BlogIndex({ data: allPost }: PostsPreview) {
 }
 
 export async function getStaticProps() {
-  const { allPost } = await request(process.env.CMS_URL as string, getAllPosts);
+  const { allPost } = await getAllPosts();
 
   return {
     props: {

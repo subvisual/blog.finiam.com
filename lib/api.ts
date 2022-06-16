@@ -1,104 +1,129 @@
-import { gql } from 'graphql-request';
+import { gql, request } from 'graphql-request';
 
-export const getAllPosts = gql`
-  query {
-    allPost(sort: { publishedAt: DESC }) {
-      title
-      slug {
-        current
-      }
-      keywords
-      longDescription
-      author {
-        name
-        image {
-          asset {
-            url
+export const getAllPosts = () => {
+  return request(
+    process.env.CMS_URL as string,
+    gql`
+      query {
+        allPost(sort: { publishedAt: DESC }) {
+          title
+          slug {
+            current
           }
-        }
-      }
-      featuredImage {
-        asset {
-          url
-        }
-      }
-      featuredImageAlt
-      category
-      publishedAt
-    }
-  }
-`;
-
-export const getPostsByCategory = (category: string) => gql`
-    query {
-      allPost(where: { category: { eq: "${category}"} }) {        
-        title
-        slug {
-          current
-        }
-        keywords
-        longDescription
-        author {
-          name
-          image {
+          keywords
+          longDescription
+          author {
+            name
+            image {
+              asset {
+                url
+              }
+            }
+          }
+          featuredImage {
             asset {
               url
             }
           }
+          featuredImageAlt
+          category
+          publishedAt
         }
-        featuredImage {
-          asset {
-            url
+      }
+    `
+  );
+};
+
+export const getPostsByCategory = (category: string) => {
+  return request(
+    process.env.CMS_URL as string,
+    gql`
+      query {
+        allPost(where: { category: { eq: "${category}"} }) {        
+          title
+          slug {
+            current
+          }
+          keywords
+          longDescription
+          author {
+            name
+            image {
+              asset {
+                url
+              }
+            }
+          }
+          featuredImage {
+            asset {
+              url
+            }
+          }
+          featuredImageAlt
+          category
+          publishedAt
+        }
+      }
+    `
+  );
+};
+
+export const getAllCategories = () => {
+  return request(
+    process.env.CMS_URL as string,
+    gql`
+      query {
+        allPost(sort: { publishedAt: DESC }) {
+          category
+        }
+      }
+    `
+  );
+};
+
+export const getAllSlugs = () => {
+  return request(
+    process.env.CMS_URL as string,
+    gql`
+      query {
+        allPost(sort: { publishedAt: DESC }) {
+          slug {
+            current
           }
         }
-        featuredImageAlt
-        category
-        publishedAt
       }
-    }
-  `;
+    `
+  );
+};
 
-export const getAllCategories = gql`
-  query {
-    allPost(sort: { publishedAt: DESC }) {
-      category
-    }
-  }
-`;
-
-export const getAllSlugs = gql`
-  query {
-    allPost(sort: { publishedAt: DESC }) {
-      slug {
-        current
-      }
-    }
-  }
-`;
-
-export const getPost = (slug: string) => gql`
-query {
-  allPost(where: { slug: { current: { eq: "${slug}" } } }) {        
-    title
-    keywords
-    author {
-      name
-      role
-      image {
-        asset {
-          url
+export const getPost = (slug: string) => {
+  return request(
+    process.env.CMS_URL as string,
+    gql`
+      query {
+        allPost(where: { slug: { current: { eq: "${slug}" } } }) {        
+          title
+          keywords
+          author {
+            name
+            role
+            image {
+              asset {
+                url
+              }
+            }
+          }
+          featuredImage {
+            asset {
+              url
+            }
+          }
+          featuredImageAlt
+          category
+          publishedAt
+          body
         }
       }
-    }
-    featuredImage {
-      asset {
-        url
-      }
-    }
-    featuredImageAlt
-    category
-    publishedAt
-    body
-  }
-}
-`;
+    `
+  );
+};

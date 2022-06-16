@@ -1,6 +1,5 @@
 import { request, gql } from 'graphql-request';
 
-import { PostsMain, SlugContext, PostSlugs } from '../../index';
 import { getAllSlugs, getPost } from '../../lib/api';
 
 export default function BlogPost({ data }: PostsMain) {
@@ -25,7 +24,7 @@ export default function BlogPost({ data }: PostsMain) {
 }
 
 export async function getStaticProps(context: SlugContext) {
-  const { allPost } = await request(process.env.CMS_URL as string, getPost(context.params.slug));
+  const { allPost } = await getPost(context.params.slug);
 
   return {
     props: {
@@ -35,7 +34,7 @@ export async function getStaticProps(context: SlugContext) {
 }
 
 export async function getStaticPaths() {
-  const { allPost }: PostSlugs = await request(process.env.CMS_URL as string, getAllSlugs);
+  const { allPost }: PostSlugs = await getAllSlugs();
 
   const paths = allPost.map(item => ({
     params: { slug: item.slug.current },
@@ -43,6 +42,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true, // false or 'blocking'
+    fallback: false,
   };
 }
