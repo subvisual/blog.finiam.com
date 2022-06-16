@@ -1,9 +1,9 @@
 import { request, gql } from 'graphql-request';
 import Link from 'next/link';
 
-import { getAllPosts } from '../lib/api';
+import { getPostsByCategory, getAllCategories } from '../../lib/api';
 
-export default function BlogIndex({ data: allPost }: PostsPreview) {
+export default function Category({ data: allPost }: PostsPreview) {
   return allPost.map(item => (
     <div key={item.slug.current}>
       <img src={item.featuredImage.asset.url} alt={item.featuredImageAlt}></img>
@@ -23,12 +23,27 @@ export default function BlogIndex({ data: allPost }: PostsPreview) {
   ));
 }
 
-export async function getStaticProps() {
-  const { allPost } = await getAllPosts();
+export async function getStaticProps(context: CategoryContext) {
+  const { allPost } = await getPostsByCategory(context.params.category);
 
   return {
     props: {
       data: allPost,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const { allPost }: PostCategories = await getAllCategories();
+
+  const categories = Array.from(new Set(allPost.map(item => item.category)));
+
+  const paths = categories.map(category => ({
+    params: { category },
+  }));
+
+  return {
+    paths,
+    fallback: false,
   };
 }
