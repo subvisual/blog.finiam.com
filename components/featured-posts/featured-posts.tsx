@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import Link from 'next/link';
 
 import PostPreview from '../post-preview/post-preview';
 
