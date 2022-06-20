@@ -1,25 +1,35 @@
 import { request, gql } from 'graphql-request';
 
 import { getAllSlugs, getPost } from '../../lib/api';
+import PostBody from '../../components/post-body/post-body';
+import PostHeader from '../../components/post-header/post-header';
+import Layout from '../../components/layout/layout';
 
 export default function BlogPost({ data }: PostsMain) {
   const post = data[0];
 
+  const postHeaderData = {
+    title: post.title,
+    authorName: post.author.name,
+    authorImage: post.author.image.asset.url,
+    category: post.category,
+    publishedAt: post.publishedAt,
+    keywords: post.keywords,
+    imageUrl: post.featuredImage.asset.url,
+    imageAlt: post.featuredImageAlt,
+  };
+
+  const postBodyData = {
+    body: post.body,
+  };
+
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>
-        {post.author.name} &#8226; {post.category} &#8226;
-        {new Date(post.publishedAt).toLocaleDateString(undefined, {
-          year: 'numeric',
-          month: 'long',
-        })}
-      </p>
-      <p>{post.keywords}</p>
-      <img src={post.featuredImage.asset.url} alt={post.featuredImageAlt}></img>
-      <p>{post.body}</p>
-      <img src={post.author.image?.asset.url} alt={`${post.author.name} avatar`} />
-    </div>
+    <Layout showCategories={false}>
+      <div>
+        <PostHeader data={postHeaderData} />
+        <PostBody data={postBodyData} />
+      </div>
+    </Layout>
   );
 }
 
