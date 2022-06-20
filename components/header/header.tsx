@@ -24,7 +24,7 @@ export default function Header({ showCategories }: HeaderProps) {
             <a>Contact</a>
           </Link>
           <Button className='cta' buttonColor={BUTTON_COLORS.Purple} href={'#'}>
-            We're hiring
+            We&apos;re hiring
           </Button>
         </div>
       </div>

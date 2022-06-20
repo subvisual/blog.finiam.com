@@ -15,7 +15,7 @@ export default function Footer() {
         </Button>
       </div>
       <div className='circle'></div>
-      <h2>Let's build the next big thing, together.</h2>
+      <h2>Let&apos;s build the next big thing, together.</h2>
       <div className='social'>
         <Button className='cta' buttonColor={BUTTON_COLORS.Transparent} href={'#'}>
           contact@finiam.com
