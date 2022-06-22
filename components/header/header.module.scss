@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.header {
+  min-height: 10rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7rem;
+}
+
+.navbar-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar-link {
+  margin-right: 4rem;
+  color: $color-dark-gray;
+}

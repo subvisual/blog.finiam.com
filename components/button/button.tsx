@@ -1,18 +1,21 @@
 import Link from 'next/link';
 
+import styles from './button.module.scss';
+
 export enum BUTTON_COLORS {
-  Green = 'green',
-  Purple = 'purple',
+  Pistachio = 'pistachio',
+  Violet = 'violet',
   White = 'white',
   Pink = 'pink',
-  Red = 'red',
+  Orange = 'orange',
   Transparent = 'transparent',
 }
 
 export const Button = ({ children, className = '', buttonColor, href }: ButtonProps) => {
   return (
     <Link href={href}>
-      <a className={`${className} ${buttonColor}`}>{children}</a>
+      {/* className={`${className} ${buttonColor}`} */}
+      <a className={`${styles.button} ${styles[buttonColor]} ${styles[className]}`}>{children}</a>
     </Link>
   );
 };

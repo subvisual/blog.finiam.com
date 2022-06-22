@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.button {
+  padding: 1.5rem 2.2rem;
+  color: $color-dark-gray;
+  // font-size: 1rem;
+  border-radius: 300px;
+
+  &.pistachio {
+    background-color: $color-pistachio;
+  }
+  &.violet {
+    background-color: $color-violet;
+  }
+  &.white {
+    background-color: $color-white;
+  }
+  &.pink {
+    background-color: $color-pink;
+  }
+  &.orange {
+    background-color: $color-orange;
+  }
+  &.transparent {
+    background-color: transparent;
+    color: $color-smoked-white;
+  }
+  &.cta {
+    padding: 1rem 1.7rem;
+  }
+}

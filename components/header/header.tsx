@@ -2,33 +2,41 @@ import Link from 'next/link';
 
 import Categories from '../categories/categories';
 import Button, { BUTTON_COLORS } from '../button/button';
+import FiniamLogo from '../finiam-logo/finiam-logo';
+
+import styles from './header.module.scss';
 
 export default function Header({ showCategories }: HeaderProps) {
   return (
-    <div className='header'>
-      <div className='navigation'>
-        <div className='logo'>
-          <Link href='/'>FINIAM</Link>
-        </div>
-        <div className='nav-links'>
-          <Link href='#'>
-            <a>About</a>
-          </Link>
-          <Link href='#'>
-            <a>Work</a>
-          </Link>
-          <Link href='#'>
-            <a>Blog</a>
-          </Link>
-          <Link href='#'>
-            <a>Contact</a>
-          </Link>
-          <Button className='cta' buttonColor={BUTTON_COLORS.Purple} href={'#'}>
+    <header className={styles.header}>
+      <nav className={styles.navbar}>
+        <Link href='/'>
+          <a className='navbar-logo'>
+            <FiniamLogo />
+          </a>
+        </Link>
+        <div className={styles['navbar-wrapper']}>
+          <div className='navbar-links'>
+            <Link href='#'>
+              <a className={styles['navbar-link']}>About</a>
+            </Link>
+            <Link href='#'>
+              <a className={styles['navbar-link']}>Work</a>
+            </Link>
+            <Link href='#'>
+              <a className={styles['navbar-link']}>Blog</a>
+            </Link>
+            <Link href='#'>
+              <a className={styles['navbar-link']}>Contact</a>
+            </Link>
+          </div>
+          <div className={styles['navbar-cta']}></div>
+          <Button className='cta' buttonColor={BUTTON_COLORS.Violet} href={'#'}>
             We&apos;re hiring
           </Button>
         </div>
-      </div>
+      </nav>
       {showCategories && <Categories />}
-    </div>
+    </header>
   );
 }
