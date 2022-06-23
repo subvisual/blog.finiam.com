@@ -10,7 +10,7 @@ export default function Footer() {
         <Button className='cta' buttonColor={BUTTON_COLORS.White} href={'#'}>
           Book a call
         </Button>
-        <Button className='cta' buttonColor={BUTTON_COLORS.Green} href={'#'}>
+        <Button className='cta' buttonColor={BUTTON_COLORS.Pistachio} href={'#'}>
           Join our team
         </Button>
       </div>

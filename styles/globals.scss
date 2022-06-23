@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+body {
+  background-color: $color-smoked-white;
+  padding: 2rem;
+  font-family: 'studiofeixen', sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+}
