@@ -17,18 +17,18 @@ export default function Header({ showCategories }: HeaderProps) {
         </Link>
         <div className={styles['navbar-wrapper']}>
           <div className='navbar-links'>
-            <Link href='#'>
-              <a className={styles['navbar-link']}>About</a>
-            </Link>
-            <Link href='#'>
-              <a className={styles['navbar-link']}>Work</a>
-            </Link>
-            <Link href='#'>
+            <a href='https://finiam.com/about' className={styles['navbar-link']}>
+              About
+            </a>
+            <a href='https://finiam.com/work' className={styles['navbar-link']}>
+              Work
+            </a>
+            <Link href='/'>
               <a className={styles['navbar-link']}>Blog</a>
             </Link>
-            <Link href='#'>
-              <a className={styles['navbar-link']}>Contact</a>
-            </Link>
+            <a href='https://finiam.com/contact' className={styles['navbar-link']}>
+              Contact
+            </a>
           </div>
           <div className={styles['navbar-cta']}></div>
           <Button className='cta' buttonColor={BUTTON_COLORS.Violet} href={'#'}>
