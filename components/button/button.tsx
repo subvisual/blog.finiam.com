@@ -14,7 +14,6 @@ export enum BUTTON_COLORS {
 export const Button = ({ children, className = '', buttonColor, href }: ButtonProps) => {
   return (
     <Link href={href}>
-      {/* className={`${className} ${buttonColor}`} */}
       <a className={`${styles.button} ${styles[buttonColor]} ${styles[className]}`}>{children}</a>
     </Link>
   );
