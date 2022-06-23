@@ -31,7 +31,11 @@ export default function Header({ showCategories }: HeaderProps) {
             </a>
           </div>
           <div className={styles['navbar-cta']}></div>
-          <Button className='cta' buttonColor={BUTTON_COLORS.Violet} href={'#'}>
+          <Button
+            className='cta'
+            buttonColor={BUTTON_COLORS.Violet}
+            href={'https://finiam.homerun.co/'}
+          >
             We&apos;re hiring
           </Button>
         </div>
