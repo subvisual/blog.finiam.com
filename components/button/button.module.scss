@@ -1,30 +1,48 @@
 @import '../../styles/variables.scss';
 
 .button {
-  padding: 1.5rem 2.2rem;
+  padding: 1.1em 2.2em;
   color: $color-dark-gray;
   border-radius: 300px;
+  border: 2px solid;
+  letter-spacing: -0.02em;
 
   &.pistachio {
     background-color: $color-pistachio;
+    border-color: $color-pistachio;
   }
   &.violet {
     background-color: $color-violet;
+    border-color: $color-violet;
   }
   &.white {
     background-color: $color-white;
+    border-color: $color-white;
   }
   &.pink {
     background-color: $color-pink;
+    border-color: $color-pink;
   }
   &.orange {
     background-color: $color-orange;
+    border-color: $color-orange;
   }
   &.transparent {
     background-color: transparent;
     color: $color-smoked-white;
+    border: 1px solid $color-smoked-white;
   }
-  &.cta {
-    padding: 1rem 1.7rem;
+  &.cta-nav {
+    padding: 0.44em 1.72em;
+    line-height: 1.77em;
+  }
+  &.cta-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    line-height: 1;
+    width: 3.6em;
+    height: 3.6em;
   }
 }
