@@ -1,0 +1,9 @@
+.featured-posts {
+  margin: 3em auto 15%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 23px 21px;
+  // grid-template-rows: 37.5em;
+  grid-auto-flow: row;
+  width: 83.3%;
+}

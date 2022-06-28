@@ -114,6 +114,7 @@ type FeaturedPostsProps = {
 
 type PostPreviewProps = {
   post: PostPreview;
+  isFirst: boolean;
 };
 
 type ButtonProps = {
