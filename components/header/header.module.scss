@@ -2,6 +2,8 @@
 
 .header {
   min-height: 10rem;
+  padding: 2rem;
+  font-size: 1.25em;
 }
 
 .navbar {
@@ -22,6 +24,6 @@
 }
 
 .navbar-link {
-  margin-right: 4rem;
+  margin-right: 3em;
   color: $color-dark-gray;
 }

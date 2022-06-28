@@ -1,0 +1,64 @@
+@import '../../styles/variables';
+
+.footer {
+  background-color: $color-green;
+  font-size: 1.39em;
+  width: 100%;
+  color: $color-smoked-white;
+  min-height: 1vh;
+  padding: 6em 6em 2em;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-wrapper-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  margin-bottom: 15em;
+}
+
+.footer-wrapper-top-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.footer-wrapper-top-ctas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  justify-self: end;
+  text-align: center;
+}
+
+.footer-wrapper-middle {
+  margin-bottom: 4em;
+}
+
+.footer-heading {
+  font-size: 5.5em;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  z-index: 3;
+}
+
+.footer-wrapper-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+.circle {
+  width: 449px;
+  height: 449px;
+  background-color: $color-violet;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-60%);
+  z-index: -1;
+}
