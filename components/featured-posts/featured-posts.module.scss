@@ -3,7 +3,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 23px 21px;
-  // grid-template-rows: 37.5em;
   grid-auto-flow: row;
   width: 83.3%;
+
+  @media screen and (max-width: 900px) {
+    width: 95%;
+    column-gap: 18px;
+  }
+  @media screen and (max-width: 750px) {
+    grid-template-columns: 1fr;
+    width: 70%;
+  }
+  @media screen and (max-width: 500px) {
+    width: 88%;
+  }
 }

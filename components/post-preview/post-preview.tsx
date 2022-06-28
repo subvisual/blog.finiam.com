@@ -2,10 +2,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { getFirstNKeywords } from '../../lib/keywords';
+import { categoriesArray } from '../../lib/categories';
 
 import styles from './post-preview.module.scss';
 
 export default function PostPreview({ post, isFirst }: PostPreviewProps) {
+  const datePublished = new Date(post.publishedAt).toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'long',
+  });
+  const [monthPublished, yearPublished] = datePublished.split(' ');
+
+  const { color } = categoriesArray.find(
+    category => category.name.toLowerCase() === post.category
+  ) || { color: 'lightgrey' };
+
   return (
     <div className={`${isFirst ? styles['top-post'] : ''}`}>
       <div className={styles['post-preview']}>
@@ -41,17 +52,17 @@ export default function PostPreview({ post, isFirst }: PostPreviewProps) {
                 />
               </div>
               <li>{post.author.name}</li>
-              <li>&#183;</li>
-              <li>
-                {new Date(post.publishedAt).toLocaleDateString(undefined, {
-                  year: 'numeric',
-                  month: 'long',
-                })}
-              </li>
+              <span className={styles['date-published']}>
+                <li>&#183;</li>
+                <li className={styles['month-published']}>{monthPublished}</li>
+                <li>{yearPublished}</li>
+              </span>
             </ul>
-            <ul className={`${styles.list} ${styles.keywords}`}>
+            <ul className={styles.keywords}>
               {getFirstNKeywords(post.keywords, 2).map(keyword => (
-                <li key={keyword}>{keyword}</li>
+                <li className={`${styles[color]}`} key={keyword}>
+                  {keyword}
+                </li>
               ))}
             </ul>
           </div>
