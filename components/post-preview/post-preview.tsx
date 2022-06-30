@@ -43,20 +43,20 @@ export default function PostPreview({ post, isFirst }: PostPreviewProps) {
           </div>
           <div className={styles['post-info']}>
             <ul className={styles.list}>
-              <div className={styles['avatar-container']}>
+              <li className={styles['avatar-container']}>
                 <Image
                   src={post.author.image?.asset.url}
                   alt={`${post.author.name} avatar`}
                   layout='fill'
                   objectFit='cover'
                 />
-              </div>
+              </li>
               <li>{post.author.name}</li>
-              <span className={styles['date-published']}>
-                <li>&#183;</li>
-                <li className={styles['month-published']}>{monthPublished}</li>
-                <li>{yearPublished}</li>
-              </span>
+              <li className={styles['date-published']}>
+                <span>&#183;</span>
+                <span className={styles['month-published']}>{monthPublished}</span>
+                <span>{yearPublished}</span>
+              </li>
             </ul>
             <ul className={styles.keywords}>
               {getFirstNKeywords(post.keywords, 2).map(keyword => (
