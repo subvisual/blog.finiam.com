@@ -21,13 +21,14 @@ export default function PostBody({ data: { body } }: PostBodyProps) {
             const match = /language-(\w+)/.exec(className || 'latex');
             return !inline && match ? (
               <SyntaxHighlighter
-                children={String(children).replace(/\n$/, '')}
                 customStyle={{
                   backgroundColor: 'white',
                 }}
                 language={match[1]}
                 PreTag='div'
-              />
+              >
+                {String(children).replace(/\n$/, '')}
+              </SyntaxHighlighter>
             ) : (
               <code className={className} {...props}>
                 {children}
