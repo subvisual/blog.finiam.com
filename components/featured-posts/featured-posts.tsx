@@ -1,5 +1,3 @@
-import { Fragment } from 'react';
-
 import PostPreview from '../post-preview/post-preview';
 
 import styles from './featured-posts.module.scss';

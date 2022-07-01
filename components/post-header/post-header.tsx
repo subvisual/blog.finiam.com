@@ -1,4 +1,8 @@
-import { getFirstNKeywords } from '../../lib/keywords';
+import Image from 'next/image';
+
+import PostHeaderInfo from '../post-header-info/post-header-info';
+
+import styles from './post-header.module.scss';
 
 type PostHeaderProps = {
   data: {
@@ -16,30 +20,21 @@ type PostHeaderProps = {
 export default function PostHeader({
   data: { title, authorImage, authorName, category, publishedAt, keywords, imageUrl, imageAlt },
 }: PostHeaderProps) {
+  const postHeaderInfo = {
+    authorImage,
+    authorName,
+    publishedAt,
+    postCategory: category,
+    keywords,
+  };
+
   return (
-    <div className='post-header'>
-      <h1 className='post-title'>{title}</h1>
-      <div className='post-info'>
-        <div>
-          <img src={authorImage} alt={`${authorName} avatar`} />
-          <ul>
-            <li>{authorName}</li>
-            <li>{category}</li>
-            <li>
-              {new Date(publishedAt).toLocaleDateString(undefined, {
-                year: 'numeric',
-                month: 'long',
-              })}
-            </li>
-          </ul>
-        </div>
-        <ul className='keywords'>
-          {getFirstNKeywords(keywords, 2).map(keyword => (
-            <li key={keyword}>{keyword}</li>
-          ))}
-        </ul>
+    <div className={styles['post-header']}>
+      <h1 className={styles['post-title']}>{title}</h1>
+      <PostHeaderInfo postInfo={postHeaderInfo} className='post-main' />
+      <div className={styles['image-container']}>
+        <Image src={imageUrl} alt={imageAlt} layout='fill' objectFit='cover'></Image>
       </div>
-      <img src={imageUrl} alt={imageAlt}></img>
     </div>
   );
 }
