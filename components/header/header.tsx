@@ -6,6 +6,10 @@ import FiniamLogo from '../finiam-logo/finiam-logo';
 
 import styles from './header.module.scss';
 
+type HeaderProps = {
+  showCategories: boolean;
+};
+
 export default function Header({ showCategories }: HeaderProps) {
   return (
     <header className={styles.header}>

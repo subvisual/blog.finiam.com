@@ -1,5 +1,18 @@
 import { getFirstNKeywords } from '../../lib/keywords';
 
+type PostHeaderProps = {
+  data: {
+    title: string;
+    authorName: string;
+    authorImage: string;
+    category: string;
+    publishedAt: string;
+    keywords: string;
+    imageUrl: string;
+    imageAlt: string;
+  };
+};
+
 export default function PostHeader({
   data: { title, authorImage, authorName, category, publishedAt, keywords, imageUrl, imageAlt },
 }: PostHeaderProps) {
