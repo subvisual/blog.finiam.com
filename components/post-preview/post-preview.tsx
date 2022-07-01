@@ -6,6 +6,11 @@ import { categoriesArray } from '../../lib/categories';
 
 import styles from './post-preview.module.scss';
 
+type PostPreviewProps = {
+  post: PostPreview;
+  isFirst: boolean;
+};
+
 export default function PostPreview({ post, isFirst }: PostPreviewProps) {
   const datePublished = new Date(post.publishedAt).toLocaleDateString(undefined, {
     year: 'numeric',
