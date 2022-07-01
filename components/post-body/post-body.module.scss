@@ -1,0 +1,127 @@
+@import '../../styles/variables';
+
+.post-body {
+  width: 80%;
+  margin: 4.6em auto 13em;
+
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
+}
+
+.reactMarkdown {
+  font-family: 'recifetextweb', sans-serif;
+  font-size: 1.25em;
+  line-height: 1.6em;
+  letter-spacing: -0.4px;
+
+  * {
+    margin: 1.6em auto 0;
+    max-width: 100%;
+
+    @media screen and (max-width: 750px) {
+      margin-top: 1.4em;
+    }
+  }
+
+  @mixin block-text {
+    width: 70%;
+
+    @media screen and (max-width: 750px) {
+      width: unset;
+    }
+  }
+
+  @mixin heading {
+    font-family: 'studiofeixensans', sans-serif;
+    font-weight: normal;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 2em;
+    @include block-text;
+    @include heading;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    @include block-text;
+    @include heading;
+  }
+
+  h4 {
+    font-size: 1.3em;
+    @include block-text;
+    @include heading;
+  }
+
+  h5 {
+    font-size: 1.2em;
+    @include block-text;
+    @include heading;
+  }
+  h6 {
+    font-size: 1.1em;
+    @include block-text;
+    @include heading;
+  }
+
+  p,
+  ul,
+  ol,
+  pre,
+  article,
+  main,
+  nav,
+  section,
+  blockquote,
+  figcaption {
+    @include block-text;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  a {
+    color: $color-green;
+  }
+
+  li {
+    margin-top: 0;
+  }
+
+  li:before {
+    content: '\2022';
+    margin-right: 12px;
+  }
+
+  pre {
+    display: block;
+    font-size: 0.8em;
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+    span {
+      text-shadow: none;
+      font-family: 'pt mono', monospace;
+      letter-spacing: 0;
+    }
+
+    @media screen and (max-width: 750px) {
+      padding: 15px;
+    }
+  }
+
+  code {
+    font-family: 'pt mono', monospace;
+    font-weight: bold;
+    padding: 2px 3px;
+    font-size: 0.9em;
+    border-radius: 3px;
+  }
+}
