@@ -1,16 +1,11 @@
 import Link from 'next/link';
 
-import Categories from '../categories/categories';
 import Button, { BUTTON_COLORS } from '../button/button';
 import FiniamLogo from '../finiam-logo/finiam-logo';
 
 import styles from './header.module.scss';
 
-type HeaderProps = {
-  showCategories: boolean;
-};
-
-export default function Header({ showCategories }: HeaderProps) {
+export default function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
@@ -19,32 +14,38 @@ export default function Header({ showCategories }: HeaderProps) {
             <FiniamLogo />
           </a>
         </Link>
-        <div className={styles['navbar-wrapper']}>
-          <div className='navbar-links'>
+        <ul className={styles['nav-links']}>
+          <li>
             <a href='https://finiam.com/about' className={styles['navbar-link']}>
               About
             </a>
+          </li>
+          <li>
             <a href='https://finiam.com/work' className={styles['navbar-link']}>
               Work
             </a>
+          </li>
+          <li>
             <Link href='/'>
               <a className={styles['navbar-link']}>Blog</a>
             </Link>
+          </li>
+          <li>
             <a href='https://finiam.com/contact' className={styles['navbar-link']}>
               Contact
             </a>
-          </div>
-          <div className={styles['navbar-cta']}></div>
-          <Button
-            className='cta-nav'
-            buttonColor={BUTTON_COLORS.Violet}
-            href={'https://finiam.homerun.co/'}
-          >
-            We&apos;re hiring
-          </Button>
-        </div>
+          </li>
+          <li>
+            <Button
+              className='cta-nav'
+              buttonColor={BUTTON_COLORS.Violet}
+              href={'https://finiam.homerun.co/'}
+            >
+              We&apos;re hiring
+            </Button>
+          </li>
+        </ul>
       </nav>
-      {showCategories && <Categories />}
     </header>
   );
 }
