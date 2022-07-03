@@ -98,12 +98,20 @@
     margin-right: 12px;
   }
 
+  code {
+    font-family: 'pt mono', monospace;
+    font-weight: bold;
+    padding: 2px 5px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    background-color: rgba($color-dark-gray, 0.06);
+  }
+
   pre {
     display: block;
     font-size: 0.8em;
-    overflow-x: auto;
-    background-color: #fff;
-    padding: 20px;
+    overflow-x: scroll;
+    padding: 20px 0;
     border-radius: 10px;
 
     span {
@@ -112,16 +120,16 @@
       letter-spacing: 0;
     }
 
-    @media screen and (max-width: 750px) {
-      padding: 15px;
+    & > code {
+      display: block;
+      background-color: $color-dark-gray;
+      color: $color-smoked-white;
+      padding: 20px;
+      border-radius: 3px;
     }
-  }
 
-  code {
-    font-family: 'pt mono', monospace;
-    font-weight: bold;
-    padding: 2px 3px;
-    font-size: 0.9em;
-    border-radius: 3px;
+    @media screen and (max-width: 750px) {
+      padding: 20px;
+    }
   }
 }
