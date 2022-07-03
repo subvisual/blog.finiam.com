@@ -29,7 +29,7 @@ export default function PostHeaderInfo({
   const { color } = categoriesArray.find(
     category => category.name.toLowerCase() === postCategory
   ) || {
-    color: 'lightgrey',
+    color: '',
   };
 
   return (
