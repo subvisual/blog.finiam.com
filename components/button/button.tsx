@@ -2,6 +2,7 @@ import styles from './button.module.scss';
 
 export enum BUTTON_COLORS {
   Pistachio = 'pistachio',
+  Green = 'green',
   Violet = 'violet',
   White = 'white',
   Pink = 'pink',

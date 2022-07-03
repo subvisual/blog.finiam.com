@@ -2,46 +2,100 @@
 
 .footer {
   background-color: $color-green;
-  font-size: 1.39em;
+  font-size: 1.25em;
   width: 100%;
   color: $color-smoked-white;
   min-height: 1vh;
   padding: 6em 6em 2em;
   position: relative;
   z-index: 1;
+
+  @media screen and (max-width: 1150px) {
+    padding: 6em 4em 2em;
+    font-size: 1.2em;
+
+    .footer-wrapper-middle {
+      font-size: 3em;
+    }
+
+    .circle {
+      top: 55%;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    font-size: 1em;
+
+    .footer-wrapper-middle {
+      font-size: 3em;
+    }
+
+    .circle {
+      top: 60%;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    padding: 3em 3em 1.5em;
+
+    .footer-wrapper-top {
+      flex-direction: column;
+      justify-content: center;
+
+      & > * {
+        width: 100%;
+      }
+    }
+
+    .footer-wrapper-middle {
+      font-size: 2.2em;
+    }
+
+    .circle {
+      top: 55%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    padding: 3em 1.5em 1.5em;
+
+    .footer-wrapper-middle {
+      font-size: 1.5em;
+    }
+
+    .circle {
+      width: 287px;
+      height: 287px;
+    }
+  }
 }
 
 .footer-wrapper-top {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 15em;
-}
+  width: 100%;
+  gap: 30px;
 
-.footer-wrapper-top-links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-}
+  .footer-wrapper-top-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
 
-.footer-wrapper-top-ctas {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-  justify-self: end;
-  text-align: center;
+  .footer-wrapper-top-ctas {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
 }
 
 .footer-wrapper-middle {
-  margin-bottom: 4em;
-}
-
-.footer-heading {
-  font-size: 5.5em;
+  font-size: 3.73em;
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 1;
-  z-index: 3;
+  z-index: 2;
+  margin-bottom: 1em;
 }
 
 .footer-wrapper-bottom {
@@ -49,15 +103,22 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1em;
+  flex-wrap: wrap;
+}
+
+.wrapper-socials {
+  display: flex;
+  gap: 1em;
 }
 
 .circle {
-  width: 449px;
-  height: 449px;
+  width: 450px;
+  height: 450px;
   background-color: $color-violet;
   position: absolute;
   top: 50%;
   left: 50%;
+  margin: 0 auto;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-60%);
   z-index: -1;

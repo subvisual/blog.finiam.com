@@ -11,16 +11,16 @@ type LayoutProps = {
 
 export default function Layout({ children, showCategories }: LayoutProps) {
   return (
-    <div className={styles.layout}>
-      <div className={styles['wrapper-header']}>
-        <Header />
+    <div className='layout'>
+      <Header />
+      <div className={styles['wrapper-content']}>
+        <div className='content'>{children}</div>
+        {showCategories && (
+          <div className={styles['wrapper-categories']}>
+            <Categories />
+          </div>
+        )}
       </div>
-      <div className='content'>{children}</div>
-      {showCategories && (
-        <div className={styles['wrapper-categories']}>
-          <Categories />
-        </div>
-      )}
       <Footer />
     </div>
   );

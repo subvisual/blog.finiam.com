@@ -1,19 +1,19 @@
-.content {
-  width: 83.3%;
-  margin: 0 auto;
+@import '../../styles/variables';
+
+.wrapper-content {
+  position: relative;
 }
 
 .wrapper-categories {
   position: absolute;
-  top: 10rem;
-  left: 2em;
+  top: -6em;
+  padding: 0 2em;
 
   @media screen and (max-width: 750px) {
+    background-color: $color-smoked-white;
+    padding: 1.3em 1em;
     position: sticky;
-    margin-left: 2em;
-    margin-bottom: 20px;
-    display: flex;
-    flex: 1;
+    bottom: 0;
     overflow-x: scroll;
   }
 }

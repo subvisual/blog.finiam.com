@@ -10,7 +10,7 @@ export default function Header() {
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <Link href='/'>
-          <a className='navbar-logo'>
+          <a className={styles['nav-logo']}>
             <FiniamLogo />
           </a>
         </Link>

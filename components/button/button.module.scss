@@ -7,10 +7,20 @@
   border: 2px solid;
   letter-spacing: -0.02em;
   white-space: nowrap;
+  font-size: 1em;
+
+  @media screen and (max-width: 400px) {
+    padding: 1em 1.5em;
+  }
 
   &.pistachio {
     background-color: $color-pistachio;
     border-color: $color-pistachio;
+  }
+  &.green {
+    background-color: $color-green;
+    border-color: $color-green;
+    color: $color-smoked-white;
   }
   &.violet {
     background-color: $color-violet;

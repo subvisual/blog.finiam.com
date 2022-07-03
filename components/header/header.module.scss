@@ -13,13 +13,17 @@
     }
   }
 
-  @media screen and (max-width: 750px) {
-    font-size: 0.9em;
-    margin-bottom: 3em;
-
-    .navbar-link {
-      margin-right: 2em;
+  @media screen and (max-width: 500px) {
+    .nav-logo > * {
+      width: 79px;
     }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    font-size: 0.9em;
+    margin-bottom: 0;
   }
 }
 
@@ -27,6 +31,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav-logo > * {
+  width: 101px;
+  fill: $color-dark-gray;
 }
 
 .nav-links {
@@ -39,4 +48,8 @@
 
 .navbar-link {
   margin-right: 3em;
+}
+
+.menu-toggle-icon {
+  display: none;
 }

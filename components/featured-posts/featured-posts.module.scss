@@ -1,5 +1,5 @@
 .featured-posts {
-  margin: 3em auto 15%;
+  margin: 3em auto 7em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 23px 21px;
@@ -12,6 +12,7 @@
   }
   @media screen and (max-width: 750px) {
     grid-template-columns: 1fr;
+    margin: 1em auto;
     width: 70%;
   }
   @media screen and (max-width: 500px) {

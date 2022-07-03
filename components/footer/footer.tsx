@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles['footer-wrapper-middle']}>
-        <h2 className={styles['footer-heading']}>Let&apos;s build the next big thing, together.</h2>
+        <h2>Let&apos;s build the next big thing, together.</h2>
       </div>
       <div className={styles['footer-wrapper-bottom']}>
         <Button
@@ -55,20 +55,22 @@ export default function Footer() {
         >
           contact@finiam.com
         </Button>
-        <Button
-          className='cta-social'
-          buttonColor={BUTTON_COLORS.Transparent}
-          href={'https://twitter.com/wearefiniam'}
-        >
-          TW
-        </Button>
-        <Button
-          className='cta-social'
-          buttonColor={BUTTON_COLORS.Transparent}
-          href={'https://www.linkedin.com/company/finiam/'}
-        >
-          IN
-        </Button>
+        <div className={styles['wrapper-socials']}>
+          <Button
+            className='cta-social'
+            buttonColor={BUTTON_COLORS.Transparent}
+            href={'https://twitter.com/wearefiniam'}
+          >
+            TW
+          </Button>
+          <Button
+            className='cta-social'
+            buttonColor={BUTTON_COLORS.Transparent}
+            href={'https://www.linkedin.com/company/finiam/'}
+          >
+            IN
+          </Button>
+        </div>
       </div>
       <div className={styles.circle}></div>
     </footer>
