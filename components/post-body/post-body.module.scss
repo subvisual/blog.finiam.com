@@ -25,10 +25,10 @@
   }
 
   @mixin block-text {
-    width: 70%;
+    width: 59.2%;
 
     @media screen and (max-width: 750px) {
-      width: 90%;
+      width: 99%;
     }
   }
 
@@ -41,6 +41,11 @@
     @media screen and (max-width: 750px) {
       font-size: $font-size-sm;
     }
+  }
+
+  h1 {
+    @include block-text;
+    @include heading(2.5em, 1.8em);
   }
 
   h2 {
