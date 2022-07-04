@@ -30,8 +30,10 @@ export default function PostHeader({
 
   return (
     <div className={styles['post-header']}>
-      <h1 className={styles['post-title']}>{title}</h1>
-      <PostHeaderInfo postInfo={postHeaderInfo} className='post-main' />
+      <div className={styles['header-wrapper-top']}>
+        <h1 className={styles['post-title']}>{title}</h1>
+        <PostHeaderInfo postInfo={postHeaderInfo} className='post-main' />
+      </div>
       <div className={styles['image-container']}>
         <Image src={imageUrl} alt={imageAlt} layout='fill' objectFit='cover'></Image>
       </div>

@@ -11,17 +11,19 @@
 }
 
 .post-title {
-  width: 86%;
-  margin: 0 auto 1em;
+  margin-bottom: 1em;
   font-weight: 300;
   font-size: 4.375em;
-  text-align: center;
 
   @media screen and (max-width: 500px) {
     font-size: 3em;
     width: 95%;
     margin-bottom: 0.4em;
   }
+}
+
+.header-wrapper-top {
+  margin: 0 7.14%;
 }
 
 .image-container {
