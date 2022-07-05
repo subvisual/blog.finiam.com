@@ -7,11 +7,12 @@
 .wrapper-categories {
   position: absolute;
   top: -6em;
-  padding: 0 2em;
+  margin: 0 2em;
 
   @media screen and (max-width: 750px) {
     background-color: $color-smoked-white;
-    padding: 1.3em 1em;
+    padding: 1em;
+    margin: 1em 0;
     position: sticky;
     bottom: 0;
     overflow-x: scroll;

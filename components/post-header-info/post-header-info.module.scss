@@ -46,7 +46,7 @@
 .keywords {
   text-transform: uppercase;
   letter-spacing: -0.2px;
-  font-size: 0.7em;
+  font-size: 0.75em;
   text-align: center;
   @extend .list;
 
@@ -80,13 +80,13 @@
   }
 }
 
-@media screen and (max-width: 400px) {
-  .post-info {
-    font-size: 0.9em;
+@media screen and (max-width: 750px) {
+  .post-main .post-info {
+    font-size: 0.75em;
   }
 
   .keywords > * {
-    font-size: 0.83em;
+    font-size: 1.1em;
     padding: 3px;
   }
   .post-preview {
