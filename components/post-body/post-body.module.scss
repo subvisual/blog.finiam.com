@@ -1,0 +1,140 @@
+@import '../../styles/variables';
+
+.post-body {
+  width: 80%;
+  margin: 4.6em auto 13em;
+
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
+}
+
+.reactMarkdown {
+  font-family: 'Recife Text Web', sans-serif;
+  font-size: 1.25em;
+  line-height: 1.6em;
+  letter-spacing: -0.4px;
+
+  * {
+    margin: 1.6em auto 0;
+    max-width: 100%;
+
+    @media screen and (max-width: 750px) {
+      margin-top: 1.4em;
+    }
+  }
+
+  @mixin block-text {
+    width: 59.2%;
+
+    @media screen and (max-width: 750px) {
+      width: 99%;
+    }
+  }
+
+  @mixin heading($font-size-rg, $font-size-sm) {
+    font-family: 'Studio Feixen Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
+    font-size: $font-size-rg;
+
+    @media screen and (max-width: 750px) {
+      font-size: $font-size-sm;
+    }
+  }
+
+  h1 {
+    @include block-text;
+    @include heading(2.5em, 1.8em);
+  }
+
+  h2 {
+    @include block-text;
+    @include heading(2em, 1.5em);
+  }
+
+  h3 {
+    @include block-text;
+    @include heading(1.5em, 1.3em);
+  }
+
+  h4 {
+    @include block-text;
+    @include heading(1.3em, 1.2em);
+  }
+
+  h5 {
+    @include block-text;
+    @include heading(1.2em, 1.1em);
+  }
+  h6 {
+    @include block-text;
+    @include heading(1.2em, 1em);
+  }
+
+  p,
+  ul,
+  ol,
+  pre,
+  article,
+  main,
+  nav,
+  section,
+  blockquote,
+  figcaption {
+    @include block-text;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  a {
+    color: $color-green;
+  }
+
+  li {
+    margin-top: 0;
+  }
+
+  li:before {
+    content: '\2022';
+    margin-right: 12px;
+  }
+
+  code {
+    font-family: 'PT Mono', monospace;
+    font-weight: bold;
+    padding: 2px 5px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    background-color: rgba($color-dark-gray, 0.06);
+  }
+
+  pre {
+    display: block;
+    font-size: 0.8em;
+    overflow-x: scroll;
+    padding: 20px 0;
+    border-radius: 10px;
+
+    span {
+      text-shadow: none;
+      font-family: 'PT Mono', monospace;
+      letter-spacing: 0;
+    }
+
+    & > code {
+      display: block;
+      background-color: $color-dark-gray;
+      color: $color-smoked-white;
+      padding: 20px;
+      border-radius: 3px;
+    }
+
+    @media screen and (max-width: 750px) {
+      padding: 20px;
+    }
+  }
+}
