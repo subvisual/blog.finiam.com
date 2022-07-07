@@ -86,14 +86,14 @@ export default function Header() {
             <div className={styles['ctas-mobile']}>
               <div className={styles['ctas-wrapper-top']}>
                 <Button
-                  className='cta'
+                  className='cta-nav'
                   buttonColor={BUTTON_COLORS.Green}
                   href={'https://finiam.homerun.co/'}
                 >
                   Join our team
                 </Button>
                 <Button
-                  className='cta'
+                  className='cta-nav'
                   buttonColor={BUTTON_COLORS.Transparent}
                   href={'mailto:contact@finiam.com'}
                 >
