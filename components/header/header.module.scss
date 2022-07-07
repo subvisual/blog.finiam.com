@@ -72,6 +72,7 @@
     right: 5%;
     width: 90%;
   }
+
   .menu-toggle {
     height: 14px;
     width: 36px;
@@ -160,9 +161,14 @@
 
   .header-wrapper {
     &.open {
+      .nav-main {
+        position: fixed;
+      }
+
       .nav-mobile {
         top: 0;
         visibility: visible;
+        position: fixed;
       }
 
       .menu-toggle {
