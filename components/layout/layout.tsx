@@ -13,10 +13,10 @@ export default function Layout({ children, showCategories }: LayoutProps) {
   return (
     <div className='layout'>
       <Header />
-      <div className={styles['wrapper-content']}>
+      <div className={styles['main-wrapper']}>
         <div className='content'>{children}</div>
         {showCategories && (
-          <div className={styles['wrapper-categories']}>
+          <div className={styles['categories-container']}>
             <Categories />
           </div>
         )}

@@ -1,13 +1,14 @@
 @import '../../styles/variables.scss';
 
 .button {
-  padding: 1.1em 2.2em;
+  padding: 1.521em 2.38em;
   color: $color-dark-gray;
   border-radius: 300px;
   border: 2px solid;
   letter-spacing: -0.02em;
   white-space: nowrap;
   font-size: 1em;
+  text-align: center;
 
   @media screen and (max-width: 400px) {
     padding: 1em 1.5em;
@@ -44,7 +45,7 @@
     border: 1px solid $color-smoked-white;
   }
   &.cta-nav {
-    padding: 0.66em 1.72em;
+    padding: 0.833em 2.29em;
     line-height: 1.77em;
   }
   &.cta-social {

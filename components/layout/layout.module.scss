@@ -1,13 +1,17 @@
 @import '../../styles/variables';
 
-.wrapper-content {
+.main-wrapper {
   position: relative;
 }
 
-.wrapper-categories {
+.categories-container {
   position: absolute;
-  top: -6em;
+  top: -8.8em;
   margin: 0 2em;
+
+  @media screen and (max-width: 1000px) {
+    top: -7.5em;
+  }
 
   @media screen and (max-width: 750px) {
     background-color: $color-smoked-white;

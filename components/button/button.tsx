@@ -19,7 +19,10 @@ type ButtonProps = {
 
 export const Button = ({ children, className = '', buttonColor, href }: ButtonProps) => {
   return (
-    <a href={href} className={`${styles.button} ${styles[buttonColor]} ${styles[className]}`}>
+    <a
+      href={href}
+      className={`${styles.button} ${styles[buttonColor]} ${className && styles[className]}`}
+    >
       {children}
     </a>
   );
