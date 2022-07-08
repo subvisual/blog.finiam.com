@@ -9,8 +9,8 @@ export default function Categories() {
   return (
     <div className={styles['categories']}>
       {categoriesArray.map(({ name, color, href }) => (
-        <Link href=''>
-          <Button key={name} buttonColor={color} href={href}>
+        <Link href='' key={name}>
+          <Button buttonColor={color} href={href}>
             {name}
           </Button>
         </Link>
