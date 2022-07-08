@@ -22,11 +22,10 @@ export default function Header() {
               <FiniamLogo />
             </a>
           </Link>
-
-          <div onClick={toggleMenu} className={styles['menu-toggle']}>
+          <button type='button' onClick={toggleMenu} className={styles['menu-toggle']}>
             <span className={styles['top-line']}></span>
             <span className={styles['bottom-line']}></span>
-          </div>
+          </button>
           <ul className={styles['nav-links-main']}>
             <li>
               <a href='https://finiam.com/about' className={styles['nav-link']}>
