@@ -7,7 +7,7 @@
 }
 
 .post-title {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   font-weight: 300;
   font-size: 4.375em;
 }
@@ -24,6 +24,12 @@
   overflow: hidden;
 }
 
+@media screen and (max-width: 1000px) {
+  .post-title {
+    margin-bottom: 1em;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .post-title {
     font-size: 3em;
@@ -34,12 +40,15 @@
 @media screen and (max-width: 500px) {
   .post-header {
     gap: 43px;
-    width: 90%;
+    width: min(90%, 400px);
+  }
+
+  .header-wrapper-top {
+    margin: 0;
   }
 
   .post-title {
     font-size: 2.25em;
-    width: 95%;
     margin-bottom: 0.48em;
   }
 
