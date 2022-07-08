@@ -5,7 +5,10 @@
   margin: 4.6em auto 13em;
 
   @media screen and (max-width: 1000px) {
-    width: 88.25%;
+    width: 83.3%;
+  }
+  @media screen and (max-width: 500px) {
+    margin-top: 2.69em;
   }
 }
 
