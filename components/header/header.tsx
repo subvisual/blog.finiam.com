@@ -52,7 +52,7 @@ export default function Header() {
               <Button
                 className='cta-nav'
                 buttonColor={BUTTON_COLORS.Violet}
-                href={'https://finiam.homerun.co/'}
+                href='https://finiam.homerun.co/'
               >
                 We&apos;re hiring
               </Button>
@@ -88,14 +88,14 @@ export default function Header() {
                 <Button
                   className='cta-nav'
                   buttonColor={BUTTON_COLORS.Green}
-                  href={'https://finiam.homerun.co/'}
+                  href='https://finiam.homerun.co/'
                 >
                   Join our team
                 </Button>
                 <Button
                   className='cta-nav'
                   buttonColor={BUTTON_COLORS.Transparent}
-                  href={'mailto:contact@finiam.com'}
+                  href='mailto:contact@finiam.com'
                 >
                   contact@finiam.com
                 </Button>
@@ -104,14 +104,14 @@ export default function Header() {
                 <Button
                   className='cta-social'
                   buttonColor={BUTTON_COLORS.Transparent}
-                  href={'https://twitter.com/wearefiniam'}
+                  href='https://twitter.com/wearefiniam'
                 >
                   TW
                 </Button>
                 <Button
                   className='cta-social'
                   buttonColor={BUTTON_COLORS.Transparent}
-                  href={'https://www.linkedin.com/company/finiam/'}
+                  href='https://www.linkedin.com/company/finiam/'
                 >
                   IN
                 </Button>
