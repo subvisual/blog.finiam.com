@@ -5,7 +5,6 @@
   color: $color-dark-gray;
   border-radius: 300px;
   border: 2px solid;
-  letter-spacing: -0.02em;
   white-space: nowrap;
   font-size: 1em;
   text-align: center;
@@ -46,7 +45,7 @@
   }
   &.cta-nav {
     padding: 0.833em 2.29em;
-    line-height: 1.77em;
+    line-height: 1.77;
   }
   &.cta-social {
     display: flex;

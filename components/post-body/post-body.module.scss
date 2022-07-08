@@ -9,14 +9,16 @@
   }
   @media screen and (max-width: 500px) {
     margin-top: 2.69em;
+    margin-bottom: 3.82em;
+    width: min(90%, 400px);
   }
 }
 
 .reactMarkdown {
   font-family: 'Recife Text Web', sans-serif;
   font-size: 1.25em;
-  line-height: 1.6em;
-  letter-spacing: -0.4px;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
 
   * {
     margin: 1.6em auto 0;
@@ -25,10 +27,9 @@
 
   @media screen and (max-width: 750px) {
     font-size: 1em;
+    line-height: 1.75;
 
     * {
-      margin: 1.6em auto 0;
-      max-width: 100%;
       margin-top: 1.4em;
     }
   }
@@ -44,11 +45,12 @@
   @mixin heading($font-size-rg, $font-size-sm) {
     font-family: 'Studio Feixen Sans', sans-serif;
     font-weight: 300;
-    line-height: 1.1;
     font-size: $font-size-rg;
 
     @media screen and (max-width: 750px) {
       font-size: $font-size-sm;
+      letter-spacing: -0.03em;
+      line-height: 1.334;
     }
   }
 
@@ -122,6 +124,7 @@
     background-color: rgba($color-dark-gray, 0.06);
     overflow-wrap: break-word;
     white-space: break-spaces;
+    letter-spacing: 0;
   }
 
   pre {
@@ -137,9 +140,8 @@
     }
 
     span {
-      text-shadow: none;
       font-family: 'PT Mono', monospace;
-      letter-spacing: 0;
+      text-shadow: none;
     }
 
     & > code {
