@@ -66,6 +66,12 @@
       height: 287px;
     }
   }
+  @media screen and (max-width: 287px) {
+    .circle {
+      width: 95vw;
+      height: 95vw;
+    }
+  }
 }
 
 .footer-wrapper-top {

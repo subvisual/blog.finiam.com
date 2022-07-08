@@ -101,6 +101,7 @@
 
   a {
     color: $color-green;
+    overflow-wrap: break-word;
   }
 
   li {
@@ -119,14 +120,21 @@
     font-size: 0.9em;
     border-radius: 5px;
     background-color: rgba($color-dark-gray, 0.06);
+    overflow-wrap: break-word;
+    white-space: break-spaces;
   }
 
   pre {
     display: block;
     font-size: 0.8em;
-    overflow-x: scroll;
     padding: 20px 0;
     border-radius: 10px;
+
+    div {
+      overflow: scroll;
+      overflow-wrap: unset;
+      white-space: unset;
+    }
 
     span {
       text-shadow: none;
