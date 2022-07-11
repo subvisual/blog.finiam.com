@@ -14,7 +14,7 @@ type ButtonProps = {
   children: React.ReactNode;
   className?: string;
   buttonColor: BUTTON_COLORS;
-  href: string;
+  href?: string;
 };
 
 export const Button = ({ children, className = '', buttonColor, href }: ButtonProps) => {
