@@ -1,17 +1,21 @@
 .featured-posts {
-  margin: 3em auto 15%;
+  margin: 18em auto 7em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 23px 21px;
   grid-auto-flow: row;
   width: 83.3%;
 
+  @media screen and (max-width: 1000px) {
+    margin-top: 15em;
+  }
   @media screen and (max-width: 900px) {
     width: 95%;
     column-gap: 18px;
   }
   @media screen and (max-width: 750px) {
     grid-template-columns: 1fr;
+    margin: 1em auto;
     width: 70%;
   }
   @media screen and (max-width: 500px) {

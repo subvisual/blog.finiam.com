@@ -31,44 +31,46 @@ export default function Footer() {
           <Button
             className='cta'
             buttonColor={BUTTON_COLORS.White}
-            href={'https://calendly.com/jfsgomes/meet-and-greet'}
+            href='https://calendly.com/jfsgomes/meet-and-greet'
           >
             Book a call
           </Button>
           <Button
             className='cta'
             buttonColor={BUTTON_COLORS.Pistachio}
-            href={'https://finiam.homerun.co/'}
+            href='https://finiam.homerun.co/'
           >
             Join our team
           </Button>
         </div>
       </div>
       <div className={styles['footer-wrapper-middle']}>
-        <h2 className={styles['footer-heading']}>Let&apos;s build the next big thing, together.</h2>
+        <h2>Let&apos;s build the next big thing, together.</h2>
       </div>
       <div className={styles['footer-wrapper-bottom']}>
         <Button
           className='cta'
           buttonColor={BUTTON_COLORS.Transparent}
-          href={'mailto:contact@finiam.com'}
+          href='mailto:contact@finiam.com'
         >
           contact@finiam.com
         </Button>
-        <Button
-          className='cta-social'
-          buttonColor={BUTTON_COLORS.Transparent}
-          href={'https://twitter.com/wearefiniam'}
-        >
-          TW
-        </Button>
-        <Button
-          className='cta-social'
-          buttonColor={BUTTON_COLORS.Transparent}
-          href={'https://www.linkedin.com/company/finiam/'}
-        >
-          IN
-        </Button>
+        <div className={styles['wrapper-socials']}>
+          <Button
+            className='cta-social'
+            buttonColor={BUTTON_COLORS.Transparent}
+            href='https://twitter.com/wearefiniam'
+          >
+            TW
+          </Button>
+          <Button
+            className='cta-social'
+            buttonColor={BUTTON_COLORS.Transparent}
+            href='https://www.linkedin.com/company/finiam/'
+          >
+            IN
+          </Button>
+        </div>
       </div>
       <div className={styles.circle}></div>
     </footer>

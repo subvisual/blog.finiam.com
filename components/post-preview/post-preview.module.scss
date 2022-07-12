@@ -2,46 +2,12 @@
 
 .post-preview {
   height: 35em;
-  border-radius: 20px;
+  border-radius: 19.41px;
   overflow: hidden;
-  font-size: 0.9em;
-  letter-spacing: -0.4px;
   background-color: #fff;
   color: $color-dark-gray;
   display: grid;
   grid-template-rows: 2fr 3fr;
-
-  @media screen and (max-width: 1250px) {
-    font-size: 0.85em;
-  }
-
-  @media screen and (max-width: 1150px) {
-    font-size: 0.75em;
-    grid-template-rows: 1.7fr 3.3fr;
-  }
-  @media screen and (max-width: 750px) {
-    .post-text {
-      padding: 2.5em 2.6em 1.8em 2em;
-    }
-  }
-  @media screen and (max-width: 500px) {
-    grid-template-rows: unset;
-    height: 25em;
-
-    .image-container {
-      display: none;
-    }
-  }
-  @media screen and (max-width: 400px) {
-    height: 15em;
-    .post-text {
-      padding: 1.25em 1.6em 1em;
-    }
-
-    .post-description {
-      display: none;
-    }
-  }
 }
 
 .image-container {
@@ -64,9 +30,63 @@
 
 .post-description {
   filter: opacity(0.7);
-  letter-spacing: -0.3px;
-  line-height: 1.45;
+  font-size: 1.125em;
+  line-height: 1.444;
   text-align: justify;
+}
+
+@media screen and (max-width: 1250px) {
+  .post-preview {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .post-preview {
+    font-size: 0.75em;
+    grid-template-rows: 1.7fr 3.3fr;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .post-text {
+    padding: 2.5em 2.6em 1.8em 2em;
+  }
+
+  .post-title {
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .post-preview {
+    grid-template-rows: unset;
+    height: 15em;
+  }
+
+  .post-text {
+    padding: 1.4em 1.75em 1.75em 1.75em;
+  }
+
+  .image-container,
+  .post-description {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .post-preview {
+    height: 16em;
+  }
+
+  .post-text {
+    padding: 1.25em 1.6em 1em;
+  }
+
+  .post-description {
+    display: none;
+  }
 }
 
 .top-post {
@@ -87,7 +107,7 @@
 
     .post-description {
       font-size: 1.25em;
-      letter-spacing: -0.6px;
+      line-height: 1.4;
     }
 
     .post-text {

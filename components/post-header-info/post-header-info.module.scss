@@ -8,7 +8,7 @@
 
   .post-info {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
   }
 }
 
@@ -45,8 +45,8 @@
 
 .keywords {
   text-transform: uppercase;
-  letter-spacing: -0.2px;
-  font-size: 0.7em;
+  font-size: 12px;
+  letter-spacing: 0.4px;
   text-align: center;
   @extend .list;
 
@@ -77,18 +77,24 @@
     .month-published {
       display: none;
     }
+
+    .keywords > * {
+      font-size: 10px;
+      padding: 3px;
+      letter-spacing: 0.2px;
+    }
+
+    .list {
+      gap: 2px;
+    }
   }
 }
 
-@media screen and (max-width: 400px) {
-  .post-info {
-    font-size: 0.9em;
+@media screen and (max-width: 750px) {
+  .post-main .post-info {
+    font-size: 0.75em;
   }
 
-  .keywords > * {
-    font-size: 0.83em;
-    padding: 3px;
-  }
   .post-preview {
     .date-published {
       display: none;
@@ -96,6 +102,24 @@
   }
 
   .list {
-    gap: 2px;
+    gap: 5px;
+  }
+
+  .keywords > * {
+    padding: 3px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .keywords > * {
+    font-size: 10px;
+    letter-spacing: 0.2px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .post-preview .keywords > * {
+    font-size: 8px;
+    letter-spacing: 0px;
   }
 }

@@ -1,5 +1,27 @@
 .categories {
   display: flex;
-  gap: 1rem;
-  font-size: 1.25rem;
+  gap: 1em;
+  font-size: 1.25em;
+  min-width: fit-content;
+
+  & > * {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1150px) {
+    font-size: 1.15em;
+    gap: 0.8em;
+  }
+
+  @media screen and (max-width: 1000px) {
+    font-size: 0.95em;
+  }
+
+  @media screen and (max-width: 750px) {
+    font-size: 1em;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 0.9em;
+  }
 }
