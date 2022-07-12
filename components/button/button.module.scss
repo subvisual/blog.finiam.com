@@ -39,6 +39,11 @@
     color: $color-smoked-white;
     border: 1px solid $color-smoked-white;
     padding: 1.719rem 2.24rem;
+
+    &:hover {
+      background-color: $color-smoked-white;
+      color: $color-dark-gray;
+    }
   }
   &.cta-nav {
     padding: 0.9375rem 1.8975rem;
@@ -51,6 +56,13 @@
     line-height: 1;
     width: 5rem;
     height: 5rem;
+  }
+
+  &:hover {
+    background-color: $color-dark-gray;
+    color: $color-smoked-white;
+    transform: scale(1.02);
+    transition: all 0.1s ease-in;
   }
 
   @media screen and (max-width: 400px) {

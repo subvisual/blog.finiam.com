@@ -39,7 +39,7 @@ export default function Header() {
             </li>
             <li>
               <Link href='/'>
-                <a className={styles['nav-link']}>Blog</a>
+                <a className={`${styles['nav-link']} ${styles.blog}`}>Blog</a>
               </Link>
             </li>
             <li>
