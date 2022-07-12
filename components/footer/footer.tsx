@@ -10,10 +10,14 @@ export default function Footer() {
       <div className={styles['footer-wrapper-top']}>
         <ul className={styles['footer-wrapper-top-links']}>
           <li>
-            <a href='https://finiam.com/about'>About</a>
+            <a href='https://finiam.com/about' rel='noopener noreferrer' target='_blank'>
+              About
+            </a>
           </li>
           <li>
-            <a href='https://finiam.com/work'>Work</a>
+            <a href='https://finiam.com/work' rel='noopener noreferrer' target='_blank'>
+              Work
+            </a>
           </li>
           <li>
             <Link href='/'>
@@ -21,10 +25,14 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <a href='https://finiam.com/contact'>Contacts</a>
+            <a href='https://finiam.com/contact' rel='noopener noreferrer' target='_blank'>
+              Contacts
+            </a>
           </li>
           <li>
-            <a href='https://finiam.homerun.co/'>Careers</a>
+            <a href='https://finiam.homerun.co/' rel='noopener noreferrer' target='_blank'>
+              Careers
+            </a>
           </li>
         </ul>
         <div className={styles['footer-wrapper-top-ctas']}>
@@ -32,6 +40,8 @@ export default function Footer() {
             className='cta'
             buttonColor={BUTTON_COLORS.White}
             href='https://calendly.com/jfsgomes/meet-and-greet'
+            rel='noopener noreferrer'
+            target='_blank'
           >
             Book a call
           </Button>
@@ -39,6 +49,8 @@ export default function Footer() {
             className='cta'
             buttonColor={BUTTON_COLORS.Pistachio}
             href='https://finiam.homerun.co/'
+            rel='noreferrer'
+            target='_blank'
           >
             Join our team
           </Button>
@@ -60,6 +72,8 @@ export default function Footer() {
             className='cta-social'
             buttonColor={BUTTON_COLORS.Transparent}
             href='https://twitter.com/wearefiniam'
+            rel='noreferrer'
+            target='_blank'
           >
             TW
           </Button>
@@ -67,6 +81,8 @@ export default function Footer() {
             className='cta-social'
             buttonColor={BUTTON_COLORS.Transparent}
             href='https://www.linkedin.com/company/finiam/'
+            rel='noreferrer'
+            target='_blank'
           >
             IN
           </Button>

@@ -28,12 +28,22 @@ export default function Header() {
           </button>
           <ul className={styles['nav-links-main']}>
             <li>
-              <a href='https://finiam.com/about' className={styles['nav-link']}>
+              <a
+                href='https://finiam.com/about'
+                rel='noopener noreferrer'
+                target='_blank'
+                className={styles['nav-link']}
+              >
                 About
               </a>
             </li>
             <li>
-              <a href='https://finiam.com/work' className={styles['nav-link']}>
+              <a
+                href='https://finiam.com/work'
+                rel='noopener noreferrer'
+                target='_blank'
+                className={styles['nav-link']}
+              >
                 Work
               </a>
             </li>
@@ -43,7 +53,12 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <a href='https://finiam.com/contact' className={styles['nav-link']}>
+              <a
+                href='https://finiam.com/contact'
+                rel='noopener noreferrer'
+                target='_blank'
+                className={styles['nav-link']}
+              >
                 Contact
               </a>
             </li>
@@ -52,6 +67,8 @@ export default function Header() {
                 className='cta-nav'
                 buttonColor={BUTTON_COLORS.Violet}
                 href='https://finiam.homerun.co/'
+                rel='noreferrer'
+                target='_blank'
               >
                 We&apos;re hiring
               </Button>
@@ -62,12 +79,22 @@ export default function Header() {
           <div className={styles['mobile-wrapper']}>
             <ul className={styles['nav-links-mobile']}>
               <li>
-                <a href='https://finiam.com/about' className={styles['nav-link']}>
+                <a
+                  href='https://finiam.com/about'
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  className={styles['nav-link']}
+                >
                   About
                 </a>
               </li>
               <li>
-                <a href='https://finiam.com/work' className={styles['nav-link']}>
+                <a
+                  href='https://finiam.com/work'
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  className={styles['nav-link']}
+                >
                   Work
                 </a>
               </li>
@@ -77,7 +104,12 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <a href='https://finiam.com/contact' className={styles['nav-link']}>
+                <a
+                  href='https://finiam.com/contact'
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  className={styles['nav-link']}
+                >
                   Contact
                 </a>
               </li>
@@ -88,6 +120,8 @@ export default function Header() {
                   className='cta-nav'
                   buttonColor={BUTTON_COLORS.Green}
                   href='https://finiam.homerun.co/'
+                  rel='noreferrer'
+                  target='_blank'
                 >
                   Join our team
                 </Button>
@@ -104,6 +138,8 @@ export default function Header() {
                   className='cta-social'
                   buttonColor={BUTTON_COLORS.Transparent}
                   href='https://twitter.com/wearefiniam'
+                  rel='noreferrer'
+                  target='_blank'
                 >
                   TW
                 </Button>
@@ -111,6 +147,8 @@ export default function Header() {
                   className='cta-social'
                   buttonColor={BUTTON_COLORS.Transparent}
                   href='https://www.linkedin.com/company/finiam/'
+                  rel='noreferrer'
+                  target='_blank'
                 >
                   IN
                 </Button>

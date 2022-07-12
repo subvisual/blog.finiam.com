@@ -15,12 +15,23 @@ type ButtonProps = {
   className?: string;
   buttonColor: BUTTON_COLORS;
   href?: string;
+  rel?: string;
+  target?: string;
 };
 
-export const Button = ({ children, className = '', buttonColor, href }: ButtonProps) => {
+export const Button = ({
+  children,
+  className = '',
+  buttonColor,
+  href = '',
+  rel = '',
+  target = '',
+}: ButtonProps) => {
   return (
     <a
       href={href}
+      rel={rel}
+      target={target}
       className={`${styles.button} ${styles[buttonColor]} ${className && styles[className]}`}
     >
       {children}
