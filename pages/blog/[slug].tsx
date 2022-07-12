@@ -1,15 +1,17 @@
-import { request, gql } from 'graphql-request';
+import { request, gql } from "graphql-request";
 
-import { getAllSlugs, getPost } from '../../lib/api';
-import PostBody from '../../components/post-body/post-body';
-import PostHeader from '../../components/post-header/post-header';
-import Layout from '../../components/layout/layout';
+import { getAllSlugs, getPost } from "../../lib/api";
+import PostBody from "../../components/post-body/post-body";
+import PostHeader from "../../components/post-header/post-header";
+import Layout from "../../components/layout/layout";
+import MetaHead from "../../components/meta-head/head";
 
 export default function BlogPost({ data }: PostsMain) {
   const post = data[0];
-
+  console.log(data);
   const postHeaderData = {
     title: post.title,
+    description: post.description,
     authorName: post.author.name,
     authorImage: post.author.image.asset.url,
     category: post.category,
@@ -25,6 +27,12 @@ export default function BlogPost({ data }: PostsMain) {
 
   return (
     <Layout showCategories={false}>
+      <MetaHead
+        title={postHeaderData.title}
+        description={postHeaderData.description}
+        image={postHeaderData.imageUrl}
+      />
+
       <div>
         <PostHeader data={postHeaderData} />
         <PostBody data={postBodyData} />
@@ -46,7 +54,7 @@ export async function getStaticProps(context: SlugContext) {
 export async function getStaticPaths() {
   const { allPost }: PostSlugs = await getAllSlugs();
 
-  const paths = allPost.map(item => ({
+  const paths = allPost.map((item) => ({
     params: { slug: item.slug.current },
   }));
 

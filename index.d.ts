@@ -29,6 +29,7 @@ type PostsPreview = {
 
 type PostMain = {
   title: string;
+  description: string;
   keywords: string;
   author: {
     name: string;
