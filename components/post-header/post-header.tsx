@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import PostHeaderInfo from '../post-header-info/post-header-info';
+import PostHeaderInfo from "../post-header-info/post-header-info";
 
-import styles from './post-header.module.scss';
+import styles from "./post-header.module.scss";
 
 type PostHeaderProps = {
   data: {
@@ -14,11 +14,22 @@ type PostHeaderProps = {
     keywords: string;
     imageUrl: string;
     imageAlt: string;
+    imageMetadata: SanityImageMetadata;
   };
 };
 
 export default function PostHeader({
-  data: { title, authorImage, authorName, category, publishedAt, keywords, imageUrl, imageAlt },
+  data: {
+    title,
+    authorImage,
+    authorName,
+    category,
+    publishedAt,
+    keywords,
+    imageUrl,
+    imageAlt,
+    imageMetadata,
+  },
 }: PostHeaderProps) {
   const postHeaderInfo = {
     authorImage,
@@ -29,13 +40,22 @@ export default function PostHeader({
   };
 
   return (
-    <div className={styles['post-header']}>
-      <div className={styles['header-wrapper-top']}>
-        <h1 className={styles['post-title']}>{title}</h1>
-        <PostHeaderInfo postInfo={postHeaderInfo} className='post-main' />
+    <div className={styles["post-header"]}>
+      <div className={styles["header-wrapper-top"]}>
+        <h1 className={styles["post-title"]}>{title}</h1>
+        <PostHeaderInfo postInfo={postHeaderInfo} className="post-main" />
       </div>
-      <div className={styles['image-container']}>
-        <Image src={imageUrl} alt={imageAlt} layout='fill' objectFit='cover'></Image>
+      <div className={styles["image-container"]}>
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          width={imageMetadata.dimensions.width}
+          height={imageMetadata.dimensions.height}
+          blurDataURL={imageMetadata.lqip}
+          placeholder="blur"
+          layout="fill"
+          objectFit="cover"
+        ></Image>
       </div>
     </div>
   );

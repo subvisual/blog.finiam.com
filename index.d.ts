@@ -1,3 +1,11 @@
+type SanityImageMetadata = {
+  dimensions: {
+    width: number;
+    height: number;
+  };
+  lqip: string;
+};
+
 type PostPreview = {
   title: string;
   slug: {
@@ -16,6 +24,7 @@ type PostPreview = {
   featuredImage: {
     asset: {
       url: string;
+      metadata: SanityImageMetadata;
     };
   };
   featuredImageAlt: string;
@@ -43,6 +52,7 @@ type PostMain = {
   featuredImage: {
     asset: {
       url: string;
+      metadata: SanityImageMetadata;
     };
   };
   featuredImageAlt: string;

@@ -8,7 +8,7 @@ import MetaHead from "../../components/meta-head/head";
 
 export default function BlogPost({ data }: PostsMain) {
   const post = data[0];
-  console.log(data);
+  
   const postHeaderData = {
     title: post.title,
     description: post.description,
@@ -19,6 +19,7 @@ export default function BlogPost({ data }: PostsMain) {
     keywords: post.keywords,
     imageUrl: post.featuredImage.asset.url,
     imageAlt: post.featuredImageAlt,
+    imageMetadata: post.featuredImage.asset.metadata
   };
 
   const postBodyData = {
