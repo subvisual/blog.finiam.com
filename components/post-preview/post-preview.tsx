@@ -28,8 +28,6 @@ export default function PostPreview({ post, isFirst }: PostPreviewProps) {
               <Image
                 src={post.featuredImage.asset.url}
                 alt={post.featuredImageAlt}
-                width={post.featuredImage.asset.metadata.dimensions.width}
-                height={post.featuredImage.asset.metadata.dimensions.height}
                 blurDataURL={post.featuredImage.asset.metadata.lqip}
                 objectFit="cover"
                 layout="fill"

@@ -18,11 +18,7 @@ const POST_SUMMARY_QUERY = `
   featuredImage {
     asset {
       url
-      metadata { 
-        dimensions {
-          width 
-          height
-        }
+      metadata {
         lqip
       }
     }
@@ -110,11 +106,7 @@ export const getPost = (slug: string) => {
           featuredImage {
             asset {
               url
-              metadata { 
-                dimensions {
-                  width 
-                  height
-                }
+              metadata {
                 lqip
               }
             }

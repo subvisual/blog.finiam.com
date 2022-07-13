@@ -42,8 +42,6 @@ export default function PostHeaderInfo({
               alt={`${authorName} avatar`}
               width={50}
               height={50}
-              layout="fill"
-              objectFit="cover"
             />
           </li>
           <li>{authorName}</li>

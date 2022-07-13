@@ -49,8 +49,6 @@ export default function PostHeader({
         <Image
           src={imageUrl}
           alt={imageAlt}
-          width={imageMetadata.dimensions.width}
-          height={imageMetadata.dimensions.height}
           blurDataURL={imageMetadata.lqip}
           placeholder="blur"
           layout="fill"
