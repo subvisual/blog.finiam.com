@@ -103,6 +103,7 @@ export const getPost = (slug: string) => {
       query {
         allPost(where: { slug: { current: { eq: "${slug}" } } }) {        
           title
+          description
           keywords
           author {
             name

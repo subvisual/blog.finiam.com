@@ -1,8 +1,9 @@
-import Header from '../header/header';
-import Footer from '../footer/footer';
-import Categories from '../categories/categories';
+import Header from "../header/header";
+import Footer from "../footer/footer";
+import Categories from "../categories/categories";
 
-import styles from './layout.module.scss';
+import styles from "./layout.module.scss";
+import MetaHead from "../meta-head/head";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -11,17 +12,20 @@ type LayoutProps = {
 
 export default function Layout({ children, showCategories }: LayoutProps) {
   return (
-    <div className='layout'>
-      <Header />
-      <div className={styles['main-wrapper']}>
-        <div className='content'>{children}</div>
-        {showCategories && (
-          <div className={styles['categories-container']}>
-            <Categories />
-          </div>
-        )}
+    <>
+      <MetaHead />
+      <div className="layout">
+        <Header />
+        <div className={styles["main-wrapper"]}>
+          <div className="content">{children}</div>
+          {showCategories && (
+            <div className={styles["categories-container"]}>
+              <Categories />
+            </div>
+          )}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
