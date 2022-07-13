@@ -98,7 +98,7 @@ export default function Header() {
                   Work
                 </a>
               </li>
-              <li>
+              <li className={styles.blog}>
                 <Link href='/'>
                   <a className={styles['nav-link']}>Blog</a>
                 </Link>

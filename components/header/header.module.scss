@@ -154,9 +154,15 @@
       opacity: 0.4;
       transition: all 0.2s ease-in;
 
-      &:hover {
+      &:not(.blog):hover,
+      &.blog {
         opacity: 1;
       }
+    }
+
+    a {
+      display: block;
+      width: 100%;
     }
   }
 
