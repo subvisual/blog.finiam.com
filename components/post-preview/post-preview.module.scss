@@ -35,6 +35,15 @@
   text-align: justify;
 }
 
+.text-wrapper {
+  flex-grow: 1;
+
+  a {
+    display: block;
+    height: 100%;
+  }
+}
+
 @media screen and (max-width: 1250px) {
   .post-preview {
     font-size: 0.9em;
