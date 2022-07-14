@@ -127,7 +127,7 @@ export default function Header() {
                 </Button>
                 <Button
                   className='cta-nav'
-                  buttonColor={BUTTON_COLORS.Transparent}
+                  buttonColor={BUTTON_COLORS.TransparentLight}
                   href='mailto:contact@finiam.com'
                 >
                   contact@finiam.com
@@ -136,7 +136,7 @@ export default function Header() {
               <div className={styles['ctas-wrapper-bottom']}>
                 <Button
                   className='cta-social'
-                  buttonColor={BUTTON_COLORS.Transparent}
+                  buttonColor={BUTTON_COLORS.TransparentLight}
                   href='https://twitter.com/wearefiniam'
                   rel='noreferrer'
                   target='_blank'
@@ -145,7 +145,7 @@ export default function Header() {
                 </Button>
                 <Button
                   className='cta-social'
-                  buttonColor={BUTTON_COLORS.Transparent}
+                  buttonColor={BUTTON_COLORS.TransparentLight}
                   href='https://www.linkedin.com/company/finiam/'
                   rel='noreferrer'
                   target='_blank'

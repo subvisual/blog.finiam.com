@@ -1,14 +1,13 @@
-import { request, gql } from "graphql-request";
-
-import { getAllSlugs, getPost } from "../../lib/api";
-import PostBody from "../../components/post-body/post-body";
-import PostHeader from "../../components/post-header/post-header";
-import Layout from "../../components/layout/layout";
-import MetaHead from "../../components/meta-head/head";
+import { getAllSlugs, getPost } from '../../lib/api';
+import PostBody from '../../components/post-body/post-body';
+import PostHeader from '../../components/post-header/post-header';
+import Layout from '../../components/layout/layout';
+import Share from '../../components/share/share';
+import MetaHead from '../../components/meta-head/head';
 
 export default function BlogPost({ data }: PostsMain) {
   const post = data[0];
-  
+
   const postHeaderData = {
     title: post.title,
     description: post.description,
@@ -19,7 +18,7 @@ export default function BlogPost({ data }: PostsMain) {
     keywords: post.keywords,
     imageUrl: post.featuredImage.asset.url,
     imageAlt: post.featuredImageAlt,
-    imageMetadata: post.featuredImage.asset.metadata
+    imageMetadata: post.featuredImage.asset.metadata,
   };
 
   const postBodyData = {
@@ -37,6 +36,7 @@ export default function BlogPost({ data }: PostsMain) {
       <div>
         <PostHeader data={postHeaderData} />
         <PostBody data={postBodyData} />
+        <Share />
       </div>
     </Layout>
   );

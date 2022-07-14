@@ -7,7 +7,8 @@ export enum BUTTON_COLORS {
   White = 'white',
   Pink = 'pink',
   Orange = 'orange',
-  Transparent = 'transparent',
+  TransparentLight = 'transparent-light',
+  TransparentDark = 'transparent-dark',
 }
 
 type ButtonProps = {
