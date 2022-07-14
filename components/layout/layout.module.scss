@@ -21,4 +21,7 @@
     bottom: 0;
     overflow-x: scroll;
   }
+  @media screen and (max-width: 500px) {
+    padding: 6%;
+  }
 }
