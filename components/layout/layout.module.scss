@@ -1,9 +1,6 @@
 @import '../../styles/variables';
 
 .layout {
-  width: 95%;
-  max-width: 1440px;
-  margin: auto;
   position: relative;  
 }
 
@@ -13,24 +10,31 @@
   flex-direction: column;
 }
 
-.categories-container {
-  /* position: absolute;
-  top: -8.8em;
-  margin: 0 2em; */
-  order: -1;
-  display: flex;
-
-  /* @media screen and (max-width: 1000px) {
-    top: -7.5em;
-  } */
+.content {
+  width: 95%;
+  max-width: 1440px;
+  margin: auto;
 
   @media screen and (max-width: 750px) {
+    width: 90%;
+  }
+}
+
+.categories-container {
+  order: -1;
+  display: flex;
+  width: 95%;
+  max-width: 1440px;
+  margin: auto;
+  
+  @media screen and (max-width: 750px) {
+    position: sticky;
+    width: 100%;
+    bottom: 0;    
     order: 1;
     background-color: $color-smoked-white;
     padding: 1em;
     margin: 1em 0;
-    position: sticky;
-    /* bottom: 0; */
     overflow-x: scroll;
   }
 

@@ -17,15 +17,15 @@ export default function Layout({ children, showCategories }: LayoutProps) {
       <div className={styles["layout"]}>
         <Header />
         <div className={styles["main-wrapper"]}>
-          <div className="content">{children}</div>
+          <div className={styles["content"]}>{children}</div>
           {showCategories && (
             <div className={styles["categories-container"]}>
               <Categories />
             </div>
           )}
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }
