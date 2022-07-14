@@ -21,10 +21,10 @@ export default function PostPreview({ post, isFirst }: PostPreviewProps) {
 
   return (
     <div className={`${isFirst ? styles['top-post'] : ''}`}>
-      <div className={styles['post-preview']}>
-        <div className={styles['image-container']}>
-          <Link href={`/blog/${post.slug.current}`}>
-            <a>
+      <Link href={`/blog/${post.slug.current}`}>
+        <a>
+          <div className={styles['post-preview']}>
+            <div className={styles['image-container']}>
               <Image
                 src={post.featuredImage.asset.url}
                 alt={post.featuredImageAlt}
@@ -33,21 +33,17 @@ export default function PostPreview({ post, isFirst }: PostPreviewProps) {
                 layout='fill'
                 placeholder='blur'
               />
-            </a>
-          </Link>
-        </div>
-        <div className={styles['post-text']}>
-          <div className={styles['text-wrapper']}>
-            <Link href={`/blog/${post.slug.current}`}>
-              <a>
+            </div>
+            <div className={styles['post-text']}>
+              <div className={styles['text-wrapper']}>
                 <h3 className={styles['post-title']}>{post.title}</h3>
                 <p className={styles['post-description']}>{post.longDescription}</p>
-              </a>
-            </Link>
+              </div>
+              <PostHeaderInfo postInfo={postHeaderInfo} className='post-preview' />
+            </div>
           </div>
-          <PostHeaderInfo postInfo={postHeaderInfo} className='post-preview' />
-        </div>
-      </div>
+        </a>
+      </Link>
     </div>
   );
 }
