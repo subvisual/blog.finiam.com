@@ -14,7 +14,7 @@ export default function Layout({ children, showCategories }: LayoutProps) {
   return (
     <>
       <MetaHead />
-      <div className="layout">
+      <div className={styles["layout"]}>
         <Header />
         <div className={styles["main-wrapper"]}>
           <div className="content">{children}</div>
