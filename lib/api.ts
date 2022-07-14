@@ -1,4 +1,32 @@
-import { gql, request } from 'graphql-request';
+import { gql, request } from "graphql-request";
+
+const POST_SUMMARY_QUERY = `
+  title
+  slug {
+    current
+  }
+  keywords
+  longDescription
+  author {
+    name
+    image {
+      asset {
+        url        
+      }
+    }
+  }
+  featuredImage {
+    asset {
+      url
+      metadata {
+        lqip
+      }
+    }
+  }
+  featuredImageAlt
+  category
+  publishedAt
+`;
 
 export const getAllPosts = () => {
   return request(
@@ -6,28 +34,7 @@ export const getAllPosts = () => {
     gql`
       query {
         allPost(sort: { publishedAt: DESC }) {
-          title
-          slug {
-            current
-          }
-          keywords
-          longDescription
-          author {
-            name
-            image {
-              asset {
-                url
-              }
-            }
-          }
-          featuredImage {
-            asset {
-              url
-            }
-          }
-          featuredImageAlt
-          category
-          publishedAt
+          ${POST_SUMMARY_QUERY}
         }
       }
     `
@@ -39,29 +46,11 @@ export const getPostsByCategory = (category: string) => {
     process.env.CMS_URL as string,
     gql`
       query {
-        allPost(where: { category: { eq: "${category}"} }) {        
-          title
-          slug {
-            current
-          }
-          keywords
-          longDescription
-          author {
-            name
-            image {
-              asset {
-                url
-              }
-            }
-          }
-          featuredImage {
-            asset {
-              url
-            }
-          }
-          featuredImageAlt
-          category
-          publishedAt
+        allPost(
+          where: { category: { eq: "${category}"} }
+          sort: { publishedAt: DESC }
+        ) {        
+          ${POST_SUMMARY_QUERY}
         }
       }
     `
@@ -117,6 +106,9 @@ export const getPost = (slug: string) => {
           featuredImage {
             asset {
               url
+              metadata {
+                lqip
+              }
             }
           }
           featuredImageAlt
