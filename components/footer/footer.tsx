@@ -62,7 +62,7 @@ export default function Footer() {
       <div className={styles['footer-wrapper-bottom']}>
         <Button
           className='cta'
-          buttonColor={BUTTON_COLORS.Transparent}
+          buttonColor={BUTTON_COLORS.TransparentLight}
           href='mailto:contact@finiam.com'
         >
           contact@finiam.com
@@ -70,7 +70,7 @@ export default function Footer() {
         <div className={styles['wrapper-socials']}>
           <Button
             className='cta-social'
-            buttonColor={BUTTON_COLORS.Transparent}
+            buttonColor={BUTTON_COLORS.TransparentLight}
             href='https://twitter.com/wearefiniam'
             rel='noreferrer'
             target='_blank'
@@ -79,7 +79,7 @@ export default function Footer() {
           </Button>
           <Button
             className='cta-social'
-            buttonColor={BUTTON_COLORS.Transparent}
+            buttonColor={BUTTON_COLORS.TransparentLight}
             href='https://www.linkedin.com/company/finiam/'
             rel='noreferrer'
             target='_blank'

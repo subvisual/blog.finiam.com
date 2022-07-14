@@ -1,0 +1,23 @@
+.share {
+  display: flex;
+  flex-direction: column;
+  width: 47.63%;
+  align-items: flex-start;
+  gap: 1em;
+  margin: 8em auto;
+
+  @media screen and (max-width: 1000px) {
+    width: 49.3136%;
+  }
+  @media screen and (max-width: 750px) {
+    width: 82.467%;
+  }
+  @media screen and (max-width: 500px) {
+    width: min(89.1%, 396px);
+  }
+
+  .share-buttons {
+    display: flex;
+    gap: 0.8em;
+  }
+}

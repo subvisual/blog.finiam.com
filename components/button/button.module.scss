@@ -34,7 +34,7 @@
     background-color: $color-orange;
     border-color: $color-orange;
   }
-  &.transparent {
+  &.transparent-light {
     background-color: transparent;
     color: $color-smoked-white;
     border: 1px solid $color-smoked-white;
@@ -44,6 +44,14 @@
       background-color: $color-smoked-white;
       color: $color-dark-gray;
     }
+  }
+  &.transparent-dark {
+    background-color: transparent;
+    color: $color-dark-gray;
+    border: 1px solid $color-dark-gray;
+    padding: 0 0;
+    max-width: 60px;
+    max-height: 60px;
   }
   &.cta-nav {
     padding: 0.9375rem 1.8975rem;
@@ -68,7 +76,7 @@
   @media screen and (max-width: 400px) {
     padding: 1.141rem 2rem;
 
-    &.transparent {
+    &.transparent-light {
       padding: 1.204rem 2.3rem;
     }
     &.cta-nav {
