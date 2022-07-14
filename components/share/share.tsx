@@ -23,7 +23,7 @@ export default function Share() {
         <Button
           className='cta-social'
           buttonColor={BUTTON_COLORS.TransparentDark}
-          href={`https://www.linkedin.com/shareArticle?mini=true&url=${post_url}`}
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${post_url}`}
           rel='noreferrer'
           target='_blank'
         >
