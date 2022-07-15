@@ -2,25 +2,38 @@
 
 .main-wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: 95%;
+  max-width: 1440px;
+  margin: auto;
+
+  @media screen and (max-width: 750px) {
+    width: 90%;
+  }
 }
 
 .categories-container {
-  position: absolute;
-  top: -8.8em;
-  margin: 0 2em;
-
-  @media screen and (max-width: 1000px) {
-    top: -7.5em;
-  }
-
+  order: -1;
+  display: flex;
+  width: 95%;
+  max-width: 1440px;
+  margin: auto;
+  
   @media screen and (max-width: 750px) {
+    position: sticky;
+    width: 100%;
+    bottom: 0;    
+    order: 1;
     background-color: $color-smoked-white;
     padding: 1em;
     margin: 1em 0;
-    position: sticky;
-    bottom: 0;
     overflow-x: scroll;
   }
+
   @media screen and (max-width: 500px) {
     padding: 6%;
   }

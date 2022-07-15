@@ -1,21 +1,24 @@
-@import '../../styles/variables';
-@import '../../styles/utilities';
+@import "../../styles/variables";
+@import "../../styles/utilities";
 
 .header {
-  min-height: 64px;
+  width: 95%;
+  margin: 0 auto 6.25rem;
+  padding: 2em 0;
+  max-width: 1440px;
   font-size: 1.25em;
-  margin-bottom: 9.4rem;
+
+  @media screen and (max-width: 750px) {
+    width: 90%;    
+    padding: 1.2em 0;
+  }
 }
 
 .nav-main {
-  position: absolute;
-  top: 2em;
-  right: 2em;
-  z-index: 4;
-  width: calc(100% - 4em);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 4;
 }
 
 .wrapper-nav-top {
@@ -81,12 +84,6 @@
     margin-bottom: 3em;
   }
 
-  .nav-main {
-    top: 2.5%;
-    right: 5%;
-    width: 90%;
-  }
-
   .menu-toggle {
     height: 14px;
     width: 36px;
@@ -134,10 +131,11 @@
   .nav-mobile {
     background-color: $color-dark-gray;
     display: block;
-    position: absolute;
+    position: fixed;
     padding: 5%;
     width: 100vw;
     height: 100vh;
+    left: 0;
     top: -100vh;
     visibility: hidden;
     transition: all 0.5s cubic-bezier(0, 0.16, 0.78, 1);
@@ -187,7 +185,10 @@
   .header-wrapper {
     &.open {
       .nav-main {
-        position: fixed;
+        a,
+        button {
+          z-index: 10;
+        }
       }
 
       .nav-mobile {
@@ -215,7 +216,7 @@
 
 @media screen and (max-width: 500px) {
   .header {
-    margin-bottom: 2.625em;
+    margin-bottom: 1.5em;
   }
   .nav-logo > * {
     width: 79px;

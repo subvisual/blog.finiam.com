@@ -19,6 +19,7 @@
 .image-container {
   position: relative;
   height: 34.7vw;
+  max-height: 490px;
   width: 100%;
   border-radius: 19.41px;
   overflow: hidden;
@@ -46,7 +47,7 @@
 @media screen and (max-width: 500px) {
   .post-header {
     gap: 43px;
-    width: min(90%, 400px);
+    width: min(100%, 400px);
   }
 
   .header-wrapper-top {
