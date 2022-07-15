@@ -14,17 +14,16 @@ export default function Layout({ children, showCategories }: LayoutProps) {
   return (
     <>
       <MetaHead />
-      <div className={styles["layout"]}>
-        <Header />
-        <div className={styles["main-wrapper"]}>
-          <div className={styles["content"]}>{children}</div>
-          {showCategories && (
-            <div className={styles["categories-container"]}>
-              <Categories />
-            </div>
-          )}
-        </div>
-      </div>
+
+      <Header />
+      <main className={styles["main-wrapper"]}>
+        <section className={styles["content"]}>{children}</section>
+        {showCategories && (
+          <section className={styles["categories-container"]}>
+            <Categories />
+          </section>
+        )}
+      </main>
       <Footer />
     </>
   );
