@@ -16,6 +16,8 @@ export default function BlogPost({ data }: PostsMain) {
     category: post.category,
     publishedAt: post.publishedAt,
     keywords: post.keywords,
+    headerImageUrl: post.postHeaderImage?.asset?.url,
+    headerImageMetadata: post.postHeaderImage?.asset?.metadata,
     imageUrl: post.featuredImage.asset.url,
     imageAlt: post.featuredImageAlt,
     imageMetadata: post.featuredImage.asset.metadata,

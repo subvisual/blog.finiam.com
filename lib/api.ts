@@ -111,6 +111,14 @@ export const getPost = (slug: string) => {
               }
             }
           }
+          postHeaderImage {
+            asset {
+              url
+              metadata {
+                lqip
+              }
+            }
+          }
           featuredImageAlt
           category
           publishedAt
