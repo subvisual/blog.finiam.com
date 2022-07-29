@@ -28,37 +28,35 @@ const POST_SUMMARY_QUERY = `
   publishedAt
 `;
 
-export const getAllPosts = () => {
-  return request(
+export const getAllPosts = () =>
+  request(
     process.env.CMS_URL as string,
     gql`
-      query {
-        allPost(sort: { publishedAt: DESC }) {
-          ${POST_SUMMARY_QUERY}
-        }
+    query {
+      allPost(sort: { publishedAt: DESC }) {
+        ${POST_SUMMARY_QUERY}
       }
-    `
+    }
+  `,
   );
-};
 
-export const getPostsByCategory = (category: string) => {
-  return request(
+export const getPostsByCategory = (category: string) =>
+  request(
     process.env.CMS_URL as string,
     gql`
-      query {
-        allPost(
-          where: { category: { eq: "${category}"} }
-          sort: { publishedAt: DESC }
-        ) {        
-          ${POST_SUMMARY_QUERY}
-        }
+    query {
+      allPost(
+        where: { category: { eq: "${category}"} }
+        sort: { publishedAt: DESC }
+      ) {        
+        ${POST_SUMMARY_QUERY}
       }
-    `
+    }
+  `,
   );
-};
 
-export const getAllCategories = () => {
-  return request(
+export const getAllCategories = () =>
+  request(
     process.env.CMS_URL as string,
     gql`
       query {
@@ -66,12 +64,11 @@ export const getAllCategories = () => {
           category
         }
       }
-    `
+    `,
   );
-};
 
-export const getAllSlugs = () => {
-  return request(
+export const getAllSlugs = () =>
+  request(
     process.env.CMS_URL as string,
     gql`
       query {
@@ -81,50 +78,48 @@ export const getAllSlugs = () => {
           }
         }
       }
-    `
+    `,
   );
-};
 
-export const getPost = (slug: string) => {
-  return request(
+export const getPost = (slug: string) =>
+  request(
     process.env.CMS_URL as string,
     gql`
-      query {
-        allPost(where: { slug: { current: { eq: "${slug}" } } }) {        
-          title
-          description
-          keywords
-          author {
-            name
-            role
-            image {
-              asset {
-                url
-              }
-            }
-          }
-          featuredImage {
+    query {
+      allPost(where: { slug: { current: { eq: "${slug}" } } }) {        
+        title
+        description
+        keywords
+        author {
+          name
+          role
+          image {
             asset {
               url
-              metadata {
-                lqip
-              }
             }
           }
-          postHeaderImage {
-            asset {
-              url
-              metadata {
-                lqip
-              }
-            }
-          }
-          featuredImageAlt
-          category
-          publishedAt
-          body
         }
+        featuredImage {
+          asset {
+            url
+            metadata {
+              lqip
+            }
+          }
+        }
+        postHeaderImage {
+          asset {
+            url
+            metadata {
+              lqip
+            }
+          }
+        }
+        featuredImageAlt
+        category
+        publishedAt
+        body
       }
-    `
+    }
+  `,
   );
-};

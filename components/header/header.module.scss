@@ -3,48 +3,54 @@
 
 .header {
   width: 95%;
-  margin: 0 auto 6.25rem;
-  padding: 2em 0;
   max-width: 1440px;
+  padding: 2em 0;
+  margin: 0 auto 6.25rem;
+
   font-size: 1.25em;
 
   @media screen and (max-width: 750px) {
-    width: 90%;    
+    width: 90%;
     padding: 1.2em 0;
   }
 }
 
 .nav-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .wrapper-nav-top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .nav-logo {
   & > svg {
     fill: $color-dark-gray;
+
     transition: fill 0s 0.45s;
   }
 }
 
 .nav-links-main {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  font-size: 0.9em;
+  justify-content: flex-start;
+
   color: $color-dark-gray;
+
+  font-size: 0.9em;
 }
 
 .nav-link {
-  margin-right: 3em;
   position: relative;
+
+  margin-right: 3em;
 
   &:not(.blog) {
     @include navlink-underline($current: false);
@@ -64,8 +70,9 @@
 
 @media screen and (max-width: 1000px) {
   .header {
-    font-size: 1em;
     margin-bottom: 4em;
+
+    font-size: 1em;
   }
 
   .nav-link {
@@ -85,18 +92,21 @@
   }
 
   .menu-toggle {
-    height: 14px;
-    width: 36px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 36px;
+    height: 14px;
 
     span {
       display: block;
       width: 100%;
       height: 3px;
+
       background-color: $color-green;
+
       transform: translateY(0) rotate(0);
+
       transition: transform 0.5s, background-color 0s 0.45s;
     }
   }
@@ -104,11 +114,13 @@
   .nav-logo {
     &.dark > svg {
       fill: $color-dark-gray;
+
       transition: fill 0s 0.45s;
     }
 
     &.light > svg {
       fill: $color-smoked-white;
+
       transition: fill 0s;
     }
   }
@@ -124,32 +136,41 @@
   .mobile-wrapper {
     display: flex;
     flex-direction: column;
-    margin-top: 5em;
     height: calc(100vh - 9em);
+    margin-top: 5em;
   }
 
   .nav-mobile {
-    background-color: $color-dark-gray;
-    display: block;
     position: fixed;
-    padding: 5%;
+    top: -100vh;
+    left: 0;
+
+    z-index: 3;
+
+    display: block;
+    visibility: hidden;
+
     width: 100vw;
     height: 100vh;
-    left: 0;
-    top: -100vh;
-    visibility: hidden;
+    padding: 5%;
+
+    background-color: $color-dark-gray;
+
     transition: all 0.5s cubic-bezier(0, 0.16, 0.78, 1);
-    z-index: 3;
   }
 
   .nav-links-mobile {
-    color: $color-smoked-white;
-    font-size: 3.4375em;
     flex-grow: 1;
+
+    color: $color-smoked-white;
+
+    font-size: 3.4375em;
 
     & > * {
       height: 1.5em;
+
       opacity: 0.4;
+
       transition: all 0.2s ease-in;
 
       &:not(.blog):hover,
@@ -168,6 +189,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
     font-size: 1em;
   }
 
@@ -192,14 +214,16 @@
       }
 
       .nav-mobile {
-        top: 0;
-        visibility: visible;
         position: fixed;
+        top: 0;
+
+        visibility: visible;
       }
 
       .menu-toggle {
         span {
           background-color: $color-pink;
+
           transition: transform 0.5s, background-color 0.2s;
 
           &.top-line {

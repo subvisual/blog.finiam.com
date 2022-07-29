@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { getFirstNKeywords } from "../../lib/keywords";
-import { categoriesArray } from "../../lib/categories";
+import categoriesArray from "../../lib/categories";
 
 import styles from "./post-header-info.module.scss";
 
@@ -27,7 +27,7 @@ export default function PostHeaderInfo({
   const [monthPublished, yearPublished] = datePublished.split(" ");
 
   const { color } = categoriesArray.find(
-    (category) => category.name.toLowerCase() === postCategory
+    (category) => category.name.toLowerCase() === postCategory,
   ) || {
     color: "",
   };
@@ -52,7 +52,7 @@ export default function PostHeaderInfo({
           </li>
         </ul>
         <ul className={styles.keywords}>
-          {getFirstNKeywords(keywords, 2).map((keyword) => (
+          {getFirstNKeywords(keywords).map((keyword) => (
             <li className={`${styles[color]}`} key={keyword}>
               {keyword}
             </li>

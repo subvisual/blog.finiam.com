@@ -3,7 +3,7 @@
   "extends": ["stylelint-config-prettier"],  
   "rules": {
     "prettier/prettier": true,
-    "max-nesting-depth": 3,
+    "max-nesting-depth": 4,
     "indentation": 2,
     "order/order": ["custom-properties", "declarations"],    
     "order/properties-order": [

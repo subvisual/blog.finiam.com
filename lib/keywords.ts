@@ -1,8 +1,8 @@
 export const keywordsStringToArray = (keywordsString: string): string[] => {
-  const keywordDelimiter = new RegExp(' *[,;] *');
+  const keywordDelimiter = / *[,;] */;
+
   return keywordsString.split(keywordDelimiter);
 };
 
-export const getFirstNKeywords = (keywordsString: string, n: number): string[] => {
-  return keywordsStringToArray(keywordsString).slice(0, 2);
-};
+export const getFirstNKeywords = (keywordsString: string): string[] =>
+  keywordsStringToArray(keywordsString).slice(0, 2);

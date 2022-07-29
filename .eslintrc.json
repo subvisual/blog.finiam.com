@@ -3,11 +3,24 @@
   "plugins": ["@typescript-eslint"],
   "extends": [
     "next/core-web-vitals",
+    "eslint-config-next",
     "finiam/react",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript"
   ],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ]
   }
 }
