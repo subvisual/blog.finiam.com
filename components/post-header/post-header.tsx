@@ -62,7 +62,7 @@ export default function PostHeader({
           placeholder="blur"
           layout="fill"
           objectFit="cover"
-        ></Image>
+        />
       </div>
     </div>
   );

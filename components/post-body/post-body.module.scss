@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .post-body {
   width: 80%;
@@ -8,21 +8,21 @@
     width: 83.3%;
   }
   @media screen and (max-width: 500px) {
+    width: min(100%, 400px);
     margin-top: 2.69em;
     margin-bottom: 3.82em;
-    width: min(100%, 400px);
   }
 }
 
 .reactMarkdown {
-  font-family: 'Recife Text Web', sans-serif;
+  font-family: "Recife Text Web", sans-serif;
   font-size: 1.25em;
-  line-height: 1.6;
   letter-spacing: -0.02em;
+  line-height: 1.6;
 
   * {
-    margin: 1.6em auto 0;
     max-width: 100%;
+    margin: 1.6em auto 0;
   }
 
   @media screen and (max-width: 750px) {
@@ -43,9 +43,9 @@
   }
 
   @mixin heading($font-size-rg, $font-size-sm) {
-    font-family: 'Studio Feixen Sans', sans-serif;
-    font-weight: 300;
+    font-family: "Studio Feixen Sans", sans-serif;
     font-size: $font-size-rg;
+    font-weight: 300;
 
     @media screen and (max-width: 750px) {
       font-size: $font-size-sm;
@@ -103,6 +103,7 @@
 
   a {
     color: $color-green;
+
     overflow-wrap: break-word;
   }
 
@@ -111,45 +112,52 @@
   }
 
   li:before {
-    content: '\2022';
+    content: "\2022";
+
     margin-right: 12px;
   }
 
   code {
-    font-family: 'PT Mono', monospace;
-    font-weight: bold;
     padding: 2px 5px;
-    font-size: 0.9em;
-    border-radius: 5px;
+
     background-color: rgba($color-dark-gray, 0.06);
+    border-radius: 5px;
+
+    font-family: "PT Mono", monospace;
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 0;
     overflow-wrap: break-word;
     white-space: break-spaces;
-    letter-spacing: 0;
   }
 
   pre {
     display: block;
-    font-size: 0.8em;
     padding: 20px 0;
+
     border-radius: 10px;
+
+    font-size: 0.8em;
 
     div {
       overflow: scroll;
+
       overflow-wrap: unset;
       white-space: unset;
     }
 
     span {
-      font-family: 'PT Mono', monospace;
+      font-family: "PT Mono", monospace;
       text-shadow: none;
     }
 
     & > code {
       display: block;
-      background-color: $color-dark-gray;
-      color: $color-smoked-white;
       padding: 20px;
+
+      background-color: $color-dark-gray;
       border-radius: 3px;
+      color: $color-smoked-white;
     }
 
     @media screen and (max-width: 750px) {

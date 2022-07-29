@@ -17,7 +17,7 @@ export default function Layout({ children, showCategories }: LayoutProps) {
 
       <Header />
       <main className={styles["main-wrapper"]}>
-        <section className={styles["content"]}>{children}</section>
+        <section className={styles.content}>{children}</section>
         {showCategories && (
           <section className={styles["categories-container"]}>
             <Categories />

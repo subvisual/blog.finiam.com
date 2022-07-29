@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { forwardRef, Ref, } from "react";
+import { forwardRef, Ref } from "react";
 import styles from "./button.module.scss";
 
 export enum BUTTON_COLORS {
@@ -33,23 +33,21 @@ const Button = forwardRef(
       target = "",
       ...props
     }: ButtonProps,
-    ref: Ref<HTMLAnchorElement>
-  ) => {
-    return (
-      <a
-        href={href}
-        rel={rel}
-        ref={ref}
-        target={target}
-        className={`${styles.button} ${styles[buttonColor]} ${
-          className && styles[className]
-        }`}
-        {...props}
-      >
-        {children}
-      </a>
-    );
-  }
+    ref: Ref<HTMLAnchorElement>,
+  ) => (
+    <a
+      href={href}
+      rel={rel}
+      ref={ref}
+      target={target}
+      className={`${styles.button} ${styles[buttonColor]} ${
+        className && styles[className]
+      }`}
+      {...props}
+    >
+      {children}
+    </a>
+  ),
 );
 
 export default Button;
