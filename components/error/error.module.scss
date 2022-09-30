@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+
+.error {
+  width: fit-content;
+  margin: 30vh auto 0;
+
+  text-align: center;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  a {
+    font-size: 1.2em;
+
+    &:hover {
+      color: $color-green;
+    }
+  }
+}

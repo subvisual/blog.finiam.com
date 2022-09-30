@@ -1,14 +1,16 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 body {
+  padding: 0;
+
   background-color: $color-smoked-white;
   color: $color-dark-gray;
-  padding: 0;
-  font-family: 'Studio Feixen Sans', sans-serif;
+
+  font-family: "Studio Feixen Sans", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-weight: 300;
   letter-spacing: -0.02em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,

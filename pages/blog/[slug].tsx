@@ -1,9 +1,9 @@
-import { getAllSlugs, getPost } from '../../lib/api';
-import PostBody from '../../components/post-body/post-body';
-import PostHeader from '../../components/post-header/post-header';
-import Layout from '../../components/layout/layout';
-import Share from '../../components/share/share';
-import MetaHead from '../../components/meta-head/head';
+import { getAllSlugs, getPost } from "../../lib/api";
+import PostBody from "../../components/post-body/post-body";
+import PostHeader from "../../components/post-header/post-header";
+import Layout from "../../components/layout/layout";
+import Share from "../../components/share/share";
+import MetaHead from "../../components/meta-head/head";
 
 export default function BlogPost({ data }: PostsMain) {
   const post = data[0];
@@ -16,6 +16,8 @@ export default function BlogPost({ data }: PostsMain) {
     category: post.category,
     publishedAt: post.publishedAt,
     keywords: post.keywords,
+    headerImageUrl: post.postHeaderImage?.asset?.url,
+    headerImageMetadata: post.postHeaderImage?.asset?.metadata,
     imageUrl: post.featuredImage.asset.url,
     imageAlt: post.featuredImageAlt,
     imageMetadata: post.featuredImage.asset.metadata,

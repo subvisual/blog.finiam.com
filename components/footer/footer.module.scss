@@ -1,18 +1,23 @@
-@import '../../styles/variables';
-@import '../../styles/utilities';
+@import "../../styles/variables";
+@import "../../styles/utilities";
 
 .footer {
-  background-color: $color-green;
-  font-size: 1.25em;
+  position: relative;
+
+  z-index: 1;
+
   width: 100%;
-  color: $color-smoked-white;
   min-height: 1vh;
   padding: 6em 6em 2em;
-  position: relative;
-  z-index: 1;
+
+  background-color: $color-green;
+  color: $color-smoked-white;
+
+  font-size: 1.25em;
 
   @media screen and (max-width: 1150px) {
     padding: 6em 4em 2em;
+
     font-size: 1.2em;
 
     .footer-wrapper-middle {
@@ -77,11 +82,12 @@
 
 .footer-wrapper-top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 15em;
-  width: 100%;
+  justify-content: space-between;
   gap: 30px;
+
+  width: 100%;
+  margin-bottom: 15em;
 
   .footer-wrapper-top-links {
     display: grid;
@@ -96,26 +102,28 @@
 
   .footer-wrapper-top-ctas {
     display: flex;
-    gap: 1em;
     flex-wrap: wrap;
+    gap: 1em;
   }
 }
 
 .footer-wrapper-middle {
+  z-index: 2;
+
+  margin-bottom: 1em;
+
   font-size: 3.73em;
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 1;
-  z-index: 2;
-  margin-bottom: 1em;
 }
 
 .footer-wrapper-bottom {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   gap: 1em;
-  flex-wrap: wrap;
 }
 
 .wrapper-socials {
@@ -124,14 +132,18 @@
 }
 
 .circle {
-  width: 450px;
-  height: 450px;
-  background-color: $color-violet;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: 0 auto;
-  border-radius: 50%;
-  transform: translateX(-50%) translateY(-60%);
+
   z-index: -1;
+
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+
+  background-color: $color-violet;
+  border-radius: 50%;
+
+  transform: translateX(-50%) translateY(-60%);
 }

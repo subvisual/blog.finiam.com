@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .post-main {
   .avatar-container {
@@ -21,15 +21,18 @@
 
 .post-info {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .avatar-container {
   position: relative;
-  border-radius: 50px;
-  overflow: hidden;
+
   margin-right: 0.3em;
+
+  overflow: hidden;
+
+  border-radius: 50px;
 }
 
 .list {
@@ -44,17 +47,19 @@
 }
 
 .keywords {
-  text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.4px;
   text-align: center;
+  text-transform: uppercase;
+
   @extend .list;
 
   & > * {
-    color: gray;
     padding: 5px;
+
     background-color: lightgrey;
     border-radius: 5px;
+    color: gray;
   }
   .pink {
     background-color: $color-pink;
@@ -79,8 +84,9 @@
     }
 
     .keywords > * {
-      font-size: 10px;
       padding: 3px;
+
+      font-size: 10px;
       letter-spacing: 0.2px;
     }
 

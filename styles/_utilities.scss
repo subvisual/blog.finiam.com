@@ -1,16 +1,21 @@
 @mixin navlink-underline($current: false) {
   @media screen and (min-width: 750px) {
     &:before {
-      content: '';
+      content: "";
+
       position: absolute;
-      width: 100%;
-      height: 1px;
       bottom: -2px;
       left: 0;
+
+      width: 100%;
+      height: 1px;
+
       background-color: currentColor;
+
       @if not $current {
         visibility: hidden;
         width: 0;
+
         transition: all 0.3s ease-in-out;
       }
     }

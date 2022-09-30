@@ -1,11 +1,14 @@
 .categories {
   display: flex;
   gap: 1em;
-  font-size: 1.25em;
+
   min-width: fit-content;
+
+  font-size: 1.25em;
 
   & > * {
     flex-grow: 1;
+
     text-align: center;
   }
 

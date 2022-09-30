@@ -15,6 +15,8 @@ type PostHeaderProps = {
     imageUrl: string;
     imageAlt: string;
     imageMetadata: SanityImageMetadata;
+    headerImageUrl?: string;
+    headerImageMetadata: SanityImageMetadata;
   };
 };
 
@@ -29,6 +31,8 @@ export default function PostHeader({
     imageUrl,
     imageAlt,
     imageMetadata,
+    headerImageUrl,
+    headerImageMetadata,
   },
 }: PostHeaderProps) {
   const postHeaderInfo = {
@@ -39,6 +43,11 @@ export default function PostHeader({
     keywords,
   };
 
+  const image = {
+    url: headerImageUrl || imageUrl,
+    metadata: imageMetadata || headerImageMetadata,
+  };
+
   return (
     <div className={styles["post-header"]}>
       <div className={styles["header-wrapper-top"]}>
@@ -47,13 +56,13 @@ export default function PostHeader({
       </div>
       <div className={styles["image-container"]}>
         <Image
-          src={imageUrl}
+          src={image.url}
           alt={imageAlt}
-          blurDataURL={imageMetadata.lqip}
+          blurDataURL={image.metadata.lqip}
           placeholder="blur"
           layout="fill"
           objectFit="cover"
-        ></Image>
+        />
       </div>
     </div>
   );

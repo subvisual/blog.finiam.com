@@ -1,6 +1,3 @@
-import { request, gql } from "graphql-request";
-import Link from "next/link";
-
 import { getPostsByCategory, getAllCategories } from "../../lib/api";
 import Layout from "../../components/layout/layout";
 import FeaturedPosts from "../../components/featured-posts/featured-posts";
@@ -14,11 +11,11 @@ export default function Category({
   category: string;
 }) {
   const categoryTitleCased = category.replace(/\b[a-z]/g, (val) =>
-    val.toUpperCase()
+    val.toUpperCase(),
   );
 
   return (
-    <Layout showCategories={true}>
+    <Layout showCategories>
       <MetaHead title={`${categoryTitleCased} - Finiam's blog`} />
       <FeaturedPosts posts={allPost} />
     </Layout>

@@ -55,6 +55,12 @@ type PostMain = {
       metadata: SanityImageMetadata;
     };
   };
+  postHeaderImage: {
+    asset: {
+      url: string;
+      metadata: SanityImageMetadata;
+    };
+  };
   featuredImageAlt: string;
   category: string;
   publishedAt: string;
