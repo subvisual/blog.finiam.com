@@ -29,6 +29,8 @@ export default function MetaHead({
       />
       <meta name="og:image" content={meta.image} />
       <meta name="twitter:image" content={meta.image} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={meta.title} />
       <meta name="description" content={meta.description} />
       <meta name="og:description" content={meta.description} />
       <meta name="twitter:description" content={meta.description} />
