@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import rehypeRaw from "rehype-raw";
+import remarkGrm from "remark-gfm";
 
 import styles from "./post-body.module.scss";
 
@@ -17,6 +18,7 @@ export default function PostBody({ data: { body } }: PostBodyProps) {
     <article className={styles["post-body"]}>
       <ReactMarkdown
         rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[remarkGrm]}
         className={styles.reactMarkdown}
         components={{
           code({ inline, className, children, ...props }) {
