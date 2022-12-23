@@ -201,15 +201,14 @@
   }
 
   table {
-    display: block;
-    overflow: scroll;
+    width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
+  }
 
-    @media screen and (min-width: 750px) {
-      display: table;
-      min-width: unset;
-    }
+  .table-container {
+    display: block;
+    overflow: scroll;
   }
 
   th {
