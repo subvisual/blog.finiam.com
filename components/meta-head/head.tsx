@@ -27,13 +27,14 @@ export default function MetaHead({
         name="keywords"
         content="blog, finiam, fintech, design, development, startup, team, agency, digital, software, development"
       />
-      <meta name="og:image" content={meta.image} />
       <meta name="twitter:image" content={meta.image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={meta.title} />
       <meta name="description" content={meta.description} />
-      <meta name="og:description" content={meta.description} />
       <meta name="twitter:description" content={meta.description} />
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:image" content={meta.image} />
+      <meta property="og:description" content={meta.description} />
     </Head>
   );
 }
