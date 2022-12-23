@@ -201,17 +201,30 @@
   }
 
   table {
+    display: block;
+    overflow: scroll;
     border-collapse: collapse;
     margin-bottom: 2rem;
+
+    @media screen and (min-width: 750px) {
+      display: table;
+      min-width: unset;
+    }
   }
 
   th {
     border-bottom: 1px solid $color-dark-gray;
-    text-align: left;
+    padding: 4px;
+    text-align: center;
   }
 
   td {
-    padding: 4px 0;
+    text-align: center;
+    padding: 4px 12px;
+    
+    @media screen and (min-width: 750px) {
+      padding: 4px 8px;      
+    }
   }
 
   tr:nth-of-type(2n) {
