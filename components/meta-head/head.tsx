@@ -34,6 +34,7 @@ export default function MetaHead({
       <meta name="twitter:description" content={meta.description} />
       <meta property="og:title" content={meta.title} />
       <meta property="og:image" content={meta.image} />
+      <meta name="image" property="og:image" content={meta.image} />
       <meta property="og:description" content={meta.description} />
     </Head>
   );
