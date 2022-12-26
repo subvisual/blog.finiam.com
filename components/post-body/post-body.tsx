@@ -41,12 +41,10 @@ export default function PostBody({ data: { body } }: PostBodyProps) {
               </code>
             );
           },
-          table({children, ...props}) {
+          table({ children }) {
             return (
               <div className={styles["table-container"]}>
-                <table>
-                  {children}
-                </table>
+                <table>{children}</table>
               </div>
             );
           },
