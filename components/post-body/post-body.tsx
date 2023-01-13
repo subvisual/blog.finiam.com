@@ -41,6 +41,13 @@ export default function PostBody({ data: { body } }: PostBodyProps) {
               </code>
             );
           },
+          table({ children }) {
+            return (
+              <div className={styles["table-container"]}>
+                <table>{children}</table>
+              </div>
+            );
+          },
         }}
       >
         {body}
