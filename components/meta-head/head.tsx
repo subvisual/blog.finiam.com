@@ -36,6 +36,11 @@ export default function MetaHead({
       <meta property="og:image" content={meta.image} />
       <meta name="image" property="og:image" content={meta.image} />
       <meta property="og:description" content={meta.description} />
+      <script
+        data-goatcounter="https://finiam.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js"
+      />
     </Head>
   );
 }
