@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useEffect } from "react";
 
 const SOCIAL_IMG_SRC =
   "https://uploads-ssl.webflow.com/625fdbdd8d4bae7f7da9b1ba/627297235701e55b099f859e_meta-image.png";
@@ -17,6 +18,13 @@ export default function MetaHead({
     description: description || "Finiam's blog",
     image: image || SOCIAL_IMG_SRC,
   };
+
+  useEffect(() => {
+    window.goatcounter = {
+      // eslint-disable-next-line no-restricted-globals
+      path: () => `${location.host}${location.pathname}`,
+    };
+  }, []);
 
   return (
     <Head>
