@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unstable-nested-components */
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -47,6 +48,18 @@ export default function PostBody({ data: { body } }: PostBodyProps) {
                 <table>{children}</table>
               </div>
             );
+          },
+          img({ src, alt, title }) {
+            if (title) {
+              return (
+                <figure>
+                  <img src={src} alt={alt} title={title} />
+                  <figcaption>{title}</figcaption>
+                </figure>
+              );
+            }
+
+            return <img src={src} alt={alt} />;
           },
         }}
       >
