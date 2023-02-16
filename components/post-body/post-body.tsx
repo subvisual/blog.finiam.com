@@ -61,6 +61,13 @@ export default function PostBody({ data: { body } }: PostBodyProps) {
 
             return <img src={src} alt={alt} />;
           },
+          iframe({ title, ...props }) {
+            return (
+              <div>
+                <iframe title={title} {...props} />
+              </div>
+            );
+          },
         }}
       >
         {body}
