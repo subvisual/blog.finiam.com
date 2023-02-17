@@ -45,6 +45,7 @@ const generateRssFeed = async (posts: Post[]) => {
     copyright: `All rights reserved ${date.getFullYear()}, Finiam`,
     updated: date,
     generator: "Feed for Node.js",
+    feed: `${siteURL}/rss/feed.xml`,
     feedLinks: {
       rss2: `${siteURL}/rss/feed.xml`,
       json: `${siteURL}/rss/feed.json`,
@@ -59,13 +60,12 @@ const generateRssFeed = async (posts: Post[]) => {
 
     feed.addItem({
       title: post.title,
-      id: post.slug.current,
+      id: url,
       link: url,
       description: post.longDescription,
       author: [{ name: post.author.name }],
       contributor: [author],
       date: new Date(post.publishedAt),
-      image: post.featuredImage.asset.url,
     });
   });
 
