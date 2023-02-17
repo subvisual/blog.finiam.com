@@ -34,7 +34,7 @@ const generateRssFeed = async (posts: Post[]) => {
   };
 
   const feed = new Feed({
-    title: "Finiam' blog",
+    title: "Finiam's blog",
     description: "This is Finiam's blog!",
     id: `${siteURL}/`,
     link: `${siteURL}/`,
