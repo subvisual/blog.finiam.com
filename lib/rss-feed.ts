@@ -36,8 +36,8 @@ const generateRssFeed = async (posts: Post[]) => {
   const feed = new Feed({
     title: "Finiam' blog",
     description: "This is Finiam's blog!",
-    id: siteURL,
-    link: siteURL,
+    id: `${siteURL}/`,
+    link: `${siteURL}/`,
     language: "en",
     image:
       "https://uploads-ssl.webflow.com/625fdbdd8d4bae7f7da9b1ba/627297235701e55b099f859e_meta-image.png",
