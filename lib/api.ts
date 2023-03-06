@@ -11,7 +11,7 @@ const POST_SUMMARY_QUERY = `
     name
     image {
       asset {
-        url        
+        url
       }
     }
   }
@@ -48,7 +48,7 @@ export const getPostsByCategory = (category: string) =>
       allPost(
         where: { category: { eq: "${category}"} }
         sort: { publishedAt: DESC }
-      ) {        
+      ) {
         ${POST_SUMMARY_QUERY}
       }
     }
@@ -86,7 +86,7 @@ export const getPost = (slug: string) =>
     process.env.CMS_URL as string,
     gql`
     query {
-      allPost(where: { slug: { current: { eq: "${slug}" } } }) {        
+      allPost(where: { slug: { current: { eq: "${slug}" } } }) {
         title
         description
         keywords
