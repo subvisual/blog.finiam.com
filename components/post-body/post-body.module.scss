@@ -173,6 +173,10 @@
     white-space: break-spaces;
   }
 
+  div > code {
+    padding-left: 0px;
+  }
+
   pre {
     display: block;
     padding: 20px 0;
