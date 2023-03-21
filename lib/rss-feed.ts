@@ -83,6 +83,7 @@ const generateRssFeed = async (posts: Post[]) => {
       title: post.title,
       id: url,
       link: url,
+      image: post.featuredImage.asset.url,
       description: post.longDescription,
       author: [{ name: post.author.name }],
       contributor: [author],
@@ -93,6 +94,7 @@ const generateRssFeed = async (posts: Post[]) => {
       devFeed.addItem({
         title: post.title,
         id: url,
+        image: post.featuredImage.asset.url,
         link: url,
         description: post.longDescription,
         author: [{ name: post.author.name }],
