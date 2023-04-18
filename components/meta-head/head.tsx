@@ -18,6 +18,8 @@ export default function MetaHead({
     image: image || SOCIAL_IMG_SRC,
   };
 
+  console.log(meta);
+
   return (
     <Head>
       <title>{meta.title}</title>
@@ -27,14 +29,14 @@ export default function MetaHead({
         name="keywords"
         content="blog, finiam, fintech, design, development, startup, team, agency, digital, software, development"
       />
+      <meta name="description" content={meta.description} />
       <meta name="twitter:image" content={meta.image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={meta.title} />
-      <meta name="description" content={meta.description} />
       <meta name="twitter:description" content={meta.description} />
       <meta property="og:title" content={meta.title} />
-      <meta property="og:image" content={meta.image} />
-      <meta name="image" property="og:image" content={meta.image} />
+      <meta property="og:image" key="unnamed og:image" content={meta.image} />
+      <meta name="image" property="og:image" key="named og:image" content={meta.image} />
       <meta property="og:description" content={meta.description} />
       <script
         data-goatcounter="https://blogfiniam.goatcounter.com/count"
