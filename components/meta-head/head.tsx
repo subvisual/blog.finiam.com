@@ -18,8 +18,6 @@ export default function MetaHead({
     image: image || SOCIAL_IMG_SRC,
   };
 
-  console.log(meta);
-
   return (
     <Head>
       <title>{meta.title}</title>
@@ -36,7 +34,12 @@ export default function MetaHead({
       <meta name="twitter:description" content={meta.description} />
       <meta property="og:title" content={meta.title} />
       <meta property="og:image" key="unnamed og:image" content={meta.image} />
-      <meta name="image" property="og:image" key="named og:image" content={meta.image} />
+      <meta
+        name="image"
+        property="og:image"
+        key="named og:image"
+        content={meta.image}
+      />
       <meta property="og:description" content={meta.description} />
       <script
         data-goatcounter="https://blogfiniam.goatcounter.com/count"
