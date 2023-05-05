@@ -7,15 +7,18 @@ export default function MetaHead({
   title,
   description,
   image,
+  keywords,
 }: {
   title?: string;
   description?: string;
   image?: string;
+  keywords?: string;
 }) {
   const meta = {
     title: title || "Blog - Finiam",
     description: description || "Finiam's blog",
     image: image || SOCIAL_IMG_SRC,
+    keywords: keywords || "blog, finiam, fintech, design, development, startup, team, agency, digital, software, development, web3, blockchain, defi",
   };
 
   return (
@@ -23,10 +26,7 @@ export default function MetaHead({
       <title>{meta.title}</title>
 
       <link rel="icon" href="/assets/favicon.svg" />
-      <meta
-        name="keywords"
-        content="blog, finiam, fintech, design, development, startup, team, agency, digital, software, development"
-      />
+      <meta name="keywords" content={meta.keywords} />
       <meta name="description" content={meta.description} />
       <meta name="twitter:image" content={meta.image} />
       <meta name="twitter:card" content="summary_large_image" />

@@ -33,6 +33,7 @@ export default function BlogPost({ data }: PostsMain) {
         title={postHeaderData.title}
         description={postHeaderData.description}
         image={postHeaderData.imageUrl}
+        keywords={postHeaderData.keywords}
       />
 
       <div>
