@@ -18,7 +18,9 @@ export default function MetaHead({
     title: title || "Blog - Finiam",
     description: description || "Finiam's blog",
     image: image || SOCIAL_IMG_SRC,
-    keywords: keywords || "blog, finiam, fintech, design, development, startup, team, agency, digital, software, development, web3, blockchain, defi",
+    keywords:
+      keywords ||
+      "blog, finiam, fintech, design, development, startup, team, agency, digital, software, development, web3, blockchain, defi",
   };
 
   return (
