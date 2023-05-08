@@ -41,6 +41,16 @@ export default function Header() {
           <ul className={styles["nav-links-main"]}>
             <li>
               <a
+                href="https://finiam.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles["nav-link"]}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://finiam.com/about"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -90,6 +100,16 @@ export default function Header() {
         <div className={styles["nav-mobile"]}>
           <div className={styles["mobile-wrapper"]}>
             <ul className={styles["nav-links-mobile"]}>
+              <li>
+                <a
+                  href="https://finiam.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className={styles["nav-link"]}
+                >
+                  Home
+                </a>
+              </li>
               <li>
                 <a
                   href="https://finiam.com/about"
